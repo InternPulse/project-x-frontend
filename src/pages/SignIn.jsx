@@ -1,6 +1,6 @@
 import signInImage from "../assets/Rectangle 39.svg";
 import internPulseLogo from "../assets/InternPulse logo 32px.svg";
-import eyeOpenImage from "../assets/eye-image.svg";
+// import eyeOpenImage from "../assets/eye-image.svg";
 
 const SignIn = () => {
   return (
@@ -32,7 +32,7 @@ const SignIn = () => {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="joepaul@gmail.com"
+                    placeholder="Joepaul@gmail.com"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -48,9 +48,9 @@ const SignIn = () => {
                     type="password"
                     id="password"
                     name="password"
-                    placeholder="********"
+                    placeholder="*************"
                   />
-                  <img src={internPulseLogo} alt="" />
+                  {/* <img src={eyeOpenImage} alt="" className="w-[25px]" /> */}
                 </div>
               </div>
               <button className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-4 hover:bg-primary-700 mt-[40px] lg:mt-[50px]">
