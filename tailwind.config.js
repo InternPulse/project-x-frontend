@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      width: {
+        546: "546px",
+      },
       colors: {
         primary: {
           900: "#081426",
@@ -55,6 +58,7 @@ export default {
           400: "#B9BDC0",
           300: "#CCCFD1",
           100: "#EFF0F0",
+          30: "#FEFEFE",
         },
       },
     },
