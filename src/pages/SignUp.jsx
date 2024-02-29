@@ -1,5 +1,6 @@
 import internPulseLogo from "../assets/InternPulse logo 32px.svg";
 import signUpImg from "../assets/sign-up-image.svg";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
@@ -107,10 +108,16 @@ const SignUp = () => {
                     <option value="Choose Career" selected disabled>
                       Choose Career
                     </option>
-                    <option value="Frontend Development">Frontend Development</option>
-                    <option value="Backend Development">Backend Development</option>
+                    <option value="Frontend Development">
+                      Frontend Development
+                    </option>
+                    <option value="Backend Development">
+                      Backend Development
+                    </option>
                     <option value="UI/UX Design">UI/UX Design</option>
-                    <option value="Product Management">Product Management</option>
+                    <option value="Product Management">
+                      Product Management
+                    </option>
                   </select>
                 </div>
                 <div className="flex flex-col">
@@ -181,8 +188,8 @@ const SignUp = () => {
               <div className="mt-[40px] lg:mt-[25px]">
                 <p>
                   Would you Kindly consent to allowing us to store your
-                  information? Rest assured , your information will not be sold
-                  or misused
+                  information? Rest assured, your information will not be sold
+                  or misused.
                 </p>
                 <span className="flex items-center gap-3 mt-[20px]">
                   <input type="checkbox" name="" id="" />
@@ -199,7 +206,9 @@ const SignUp = () => {
                 <span className="text-neutral-700 font-normal">
                   Already have an account with us?
                 </span>
-                <span className="font-semibold"> Login</span>
+                <Link to={"/SignIn"} className="font-semibold ml-1">
+                  Login
+                </Link>
               </p>
             </div>
           </div>

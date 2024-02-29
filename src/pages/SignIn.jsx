@@ -1,6 +1,7 @@
 import signInImage from "../assets/Rectangle 39.svg";
 import internPulseLogo from "../assets/InternPulse logo 32px.svg";
 // import eyeOpenImage from "../assets/eye-image.svg";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -63,7 +64,9 @@ const SignIn = () => {
                 <span className="text-neutral-700 font-normal">
                   Don't have an account?
                 </span>
-                <span className="font-semibold"> Create Account</span>
+                <Link to={"/SignUp"} className="font-semibold ml-1">
+                  Create Account
+                </Link>
               </p>
               <p>
                 <span className="font-bold">* </span>
