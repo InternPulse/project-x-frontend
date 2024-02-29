@@ -62,7 +62,7 @@ const SignIn = () => {
               <p className="mb-[16px] lg:mt-[30px]">
                 <span className="font-bold">* </span>
                 <span className="text-neutral-700 font-normal">
-                  Don't have an account?
+                  Don{"'"}t have an account?
                 </span>
                 <Link to={"/SignUp"} className="font-semibold ml-1">
                   Create Account

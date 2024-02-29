@@ -10,6 +10,7 @@ export default {
     extend: {
       width: {
         546: "546px",
+        // 543: "546px",
       },
       colors: {
         primary: {
