@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import "cal-sans";
 import EnrollmentScreen from "./pages/enrollment";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/Welcome" element={<Welcome />} />
         <Route path="/HireTalent" element={<HireTalent />} />
         <Route path="/Enrollment" element={<EnrollmentScreen />} />
+        <Route path="/Contact" element={<Contact />} />
         <Route path="*" element={<ForgotPassword />} />
       </Routes>
     </BrowserRouter>

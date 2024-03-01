@@ -29,7 +29,7 @@ function Header() {
               href="#"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
-              Contact
+              <Link to="/Contact">Contact</Link>
             </a>
             <Link
               to={"/HireTalent"}

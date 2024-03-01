@@ -6,7 +6,7 @@ const EnrollmentScreen = () => {
   return (
     <>
       <Header />
-      <div className="lg:max-w-[1200px] max-w-[350px]  mx-auto mb-[160px]">
+      <div className="lg:max-w-[1200px] pl-[24px] pr-[24px] mx-auto mb-[160px]">
         <div className=" flex w-full justify-between">
           <div className=" lg:w-[60%] md:w-full mt-[51px]">
             <h1 className=" text-2xl lg:text-5xl leading-normal lg:leading-normal">
