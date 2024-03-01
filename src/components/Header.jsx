@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import LOGO from "../assets/InternPulse.png";
 
 function Header() {
@@ -9,8 +9,8 @@ function Header() {
   };
 
   return (
-    <header className="bg-white  relative  border-b border-neutral-200  ">
-      <div className="max-w-7xl mx-6 h-[66px] flex justify-between items-center ">
+    <header className="bg-white  relative  border-b border-neutral-200">
+      <div className="max-w-7xl mx-6 h-[66px] flex justify-between items-center lg:mx-auto">
         <div>
           <a href="/" className="flex items-center h-full">
             <img src={LOGO} alt="Logo" className="h-9 w-auto" />

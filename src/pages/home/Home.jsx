@@ -1,4 +1,3 @@
-import React from "react";
 import HeroImage from "../../assets/HeroImage.png";
 import HeroArc from "../../assets/HeroArc.png";
 import Man from "../../assets/Man.png";
@@ -15,10 +14,16 @@ const Home = () => {
       <section className="flex flex-col lg:flex-row justify-around mb-[7rem] px-10 min:h-screen  ">
         <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
           <div className="text-center  lg:text-left">
-            <h2 className="text-4xl font-bold mb-8">
-              Looking for <span className="text-primary-500">Opportunity</span>{" "}
-              to gain Relevant Work{" "}
-              <span className="text-accent-700">Experience?</span>
+            <h2 className="text-4xl font-bold mb-8 lg:flex flex-col gap-3">
+              <span>
+                Looking for
+                <span className="text-primary-500 mr-2 ml-2">
+                  Opportunities
+                </span>
+                to
+              </span>
+              <span> gain Relevant Work</span>
+              <span className="text-accent-700 ml-1">Experience?</span>
             </h2>
             <p className="text-gray-700 mb-5 bg-neut">
               At InternPulse, you explore exciting opportunities to gain
@@ -74,7 +79,7 @@ const Home = () => {
       </section>
       <Skills />
 
-      <section className="relative flex flex-col md:flex-row items-center justify-center gap-[10rem]  p-10 min:h-screen ">
+      <section className="relative flex flex-col-reverse md:flex-row items-center justify-center gap-[10rem]  p-10 min:h-screen ">
         <div className="relative w-full sm:w-[300px] md:w-[400px] h-[400px]  mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
           <img
             src={ExcitedMan}
