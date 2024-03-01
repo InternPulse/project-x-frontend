@@ -40,7 +40,7 @@ function Header() {
           </nav>
           <div>
             <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
-              Enroll Now
+              <Link to="/Enrollment">Enroll Now</Link>
             </button>
           </div>
         </div>

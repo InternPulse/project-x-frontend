@@ -8,6 +8,7 @@ import Home from "./pages/home/Home";
 import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import "cal-sans";
+import EnrollmentScreen from "./pages/enrollment";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Welcome" element={<Welcome />} />
         <Route path="/HireTalent" element={<HireTalent />} />
+        <Route path="/Enrollment" element={<EnrollmentScreen />} />
         <Route path="*" element={<ForgotPassword />} />
       </Routes>
     </BrowserRouter>
