@@ -1,21 +1,20 @@
-import React from "react";
-import Header from "../components/Header";
-import MailIcon from "../assets/icons/mail.png";
-import CallIcon from "../assets/icons/Call.png";
-import WebIcon from "../assets/icons/web.png";
-import Line from "../assets/line.png";
-import TwitterIcon from "../assets/icons/twitter_icon.png";
-import FacebookIcon from "../assets/icons/facebook_icon.png";
-import WhatsappIcon from "../assets/icons/whatsapp_icon.png";
-import InstagramIcon from "../assets/icons/instagram_icon.png";
+import MailIcon from "../../assets/icons/mail.png";
+import CallIcon from "../../assets/icons/Call.png";
+import WebIcon from "../../assets/icons/web.png";
+import Line from "../../assets/line.png";
+import TwitterIcon from "../../assets/icons/twitter_icon.png";
+import FacebookIcon from "../../assets/icons/facebook_icon.png";
+import WhatsappIcon from "../../assets/icons/whatsapp_icon.png";
+import InstagramIcon from "../../assets/icons/instagram_icon.png";
+
+import Layout from "../../layout/layout";
 
 const Contact = () => {
   return (
-    <>
-      <Header />
-      <div className="lg:max-w-[1300px] pl-[24px] pr-[24px] mx-auto mb-[160px]">
+    <Layout>
+      <div>
         <div className=" flex justify-between flex-col-reverse lg:flex-row">
-          <div className="bg-[#2967BC] mt-[46px] w-[326px] lg:w-[573px] h-[246px] lg:h-[684px] flex justify-center flex-col lg:px-[107px] px-[73px] gap-[24.5px] text-white rounded-[10px]">
+          <div className="bg-[#2967BC] mt-[46px] mx-[auto] w-[326px] lg:w-[573px] h-[246px] lg:h-[684px] flex justify-center flex-col lg:px-[107px] px-[73px] gap-[24.5px] text-white rounded-[10px]">
             <div className=" flex gap-[15.5px]">
               <img src={WebIcon} className=" w-[10%] object-contain" />
               <p className=" py-[auto]">internpulse.com</p>
@@ -48,7 +47,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

@@ -1,21 +1,22 @@
-import welcomeImage from "../assets/Rectangle 40.svg";
-import internPulseLogo from "../assets/InternPulse logo 32px.svg";
+import signInImage from "../../assets/Rectangle 39.svg";
+import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
+// import eyeOpenImage from "../assets/eye-image.svg";
 import { Link } from "react-router-dom";
 
-const Welcome = () => {
+const SignIn = () => {
   return (
     <main className="h-screen flex">
       <div className="h-full w-1/2 hidden md:block lg:block">
-        <img className="h-full w-full object-cover" src={welcomeImage} alt="" />
+        <img className="h-full w-full object-cover" src={signInImage} alt="" />
       </div>
-      <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll bg-neutral-30 md:bg-inherit lg:bg-inherit">
+      <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll  bg-neutral-30 md:bg-inherit lg:bg-inherit">
         <div className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white">
           <img src={internPulseLogo} alt="Intern Pulse Logo" />
         </div>
         <div className="px-6 w-full">
           <div className="w-full mx-auto lg:w-546">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
-              Welcome to InternPulse
+              Sign in to InternPulse
             </h1>
             <form action="" className="mt-[32px] lg:mt-[52px]">
               <div className="flex flex-col" style={{ gap: "30px" }}>
@@ -32,7 +33,7 @@ const Welcome = () => {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="joepaul@gmail.com"
+                    placeholder="Joepaul@gmail.com"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -48,8 +49,9 @@ const Welcome = () => {
                     type="password"
                     id="password"
                     name="password"
-                    placeholder="********"
+                    placeholder="*************"
                   />
+                  {/* <img src={eyeOpenImage} alt="" className="w-[25px]" /> */}
                 </div>
               </div>
               <button className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-4 hover:bg-primary-700 mt-[40px] lg:mt-[50px]">
@@ -81,4 +83,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default SignIn;
