@@ -7,14 +7,11 @@ import HireTalent from "./pages/HireTalent";
 import Home from "./pages/home/Home";
 import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import "cal-sans";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -25,7 +22,6 @@ const App = () => {
         <Route path="/HireTalent" element={<HireTalent />} />
         <Route path="*" element={<ForgotPassword />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 };

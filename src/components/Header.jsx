@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LOGO from "../assets/InternPulse.png";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,12 +31,12 @@ function Header() {
             >
               Contact
             </a>
-            <a
-              href="#"
+            <Link
+              to={"/HireTalent"}
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Hire Talent
-            </a>
+            </Link>
           </nav>
           <div>
             <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
