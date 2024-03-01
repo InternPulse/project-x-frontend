@@ -15,7 +15,7 @@ const Home = () => {
     <div>
       <Header />
       <div className="max-w-[1440px] mx-auto">
-        <section className="flex flex-col lg:flex-row justify-around mb-[7rem] px-10 min:h-screen ">
+        <section className="flex flex-col lg:flex-row justify-between mb-[7rem] px-10 min:h-screen ">
           <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px]">
             <div className="text-center  lg:text-left">
               <h2 className="text-4xl font-bold mb-8 lg:flex flex-col gap-3">
