@@ -6,10 +6,10 @@ const EnrollmentScreen = () => {
   return (
     <>
       <Header />
-      <div className="max-w-[1200px] mx-auto">
+      <div className="lg:max-w-[1200px] max-w-[350px]  mx-auto mb-[160px]">
         <div className=" flex w-full justify-between">
           <div className=" lg:w-[60%] md:w-full mt-[51px]">
-            <h1 className=" text-5xl leading-normal">
+            <h1 className=" text-2xl lg:text-5xl leading-normal lg:leading-normal">
               Be the Hero of Your Story <br /> Shape Your Future with <br />
               <span className=" text-primary-500"> InternPluse.</span> 
             </h1>
@@ -19,8 +19,8 @@ const EnrollmentScreen = () => {
             <div className=" pt-[32px]">
               <ol>
                 <li>
-                  1. Do you have any prior experience either through courses,{" "}
-                  <br />
+                  1. Do you have any prior experience either through courses,
+                  <br className=" hidden lg:block" />
                   bootcamps, or self-learning?
                   <div className=" flex gap-[30px] pt-[20px] ">
                     <div>
@@ -33,7 +33,7 @@ const EnrollmentScreen = () => {
                 </li>
                 <li className=" pt-[40px]">
                   2. Have you worked on any real-world solutions that solve{" "}
-                  <br />
+                  <br className=" hidden lg:block" />
                   business problems?
                   <div className=" flex gap-[30px] pt-[20px] ">
                     <div>
@@ -46,7 +46,7 @@ const EnrollmentScreen = () => {
                 </li>
                 <li className=" pt-[40px]">
                   3. Why do you want to join us (to gain real-world experience,{" "}
-                  <br />
+                  <br className=" hidden lg:block" />
                   to land your first tech job or opportunity, etc.)?
                   <div className=" flex gap-[30px] pt-[20px] ">
                     <div>
@@ -54,12 +54,7 @@ const EnrollmentScreen = () => {
                         type="text"
                         placeholder="Answer"
                         value={""}
-                        style={{
-                          width: "570px",
-                          height: "158px",
-                          borderRadius: "5px",
-                          border: " 1px solid #63696E",
-                        }}
+                        className=" lg:w-[570px] md:w-[528px] lg:h-[158px] md:h-[88px]   rounded-[5px] border-[1px]  border-solid border-[#63696E]"
                       />
                     </div>
                   </div>
@@ -73,12 +68,7 @@ const EnrollmentScreen = () => {
                         type="text"
                         placeholder="Answer"
                         value={""}
-                        style={{
-                          width: "570px",
-                          height: "158px",
-                          borderRadius: "5px",
-                          border: " 1px solid #63696E",
-                        }}
+                        className=" lg:w-[570px] md:w-[528px] lg:h-[158px] md:h-[88px]   rounded-[5px] border-[1px]  border-solid border-[#63696E]"
                       />
                     </div>
                   </div>
@@ -86,9 +76,17 @@ const EnrollmentScreen = () => {
               </ol>
             </div>
           </div>
-          <div className="  lg:w-[50%] ">
+          <div className="  lg:w-[50%] hidden lg:block ">
             <img src={man} />
           </div>
+        </div>
+        <div className="flex gap-4  mt-[66px] ">
+          <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl mr-2">
+            Enroll Now
+          </button>
+          <button className="bg-neutral-200 hover:bg-neutral-100 border border-solid border-primary-500 text-neutral-700 py-2 px-4 rounded-xl">
+            Learn More
+          </button>
         </div>
       </div>
     </>
