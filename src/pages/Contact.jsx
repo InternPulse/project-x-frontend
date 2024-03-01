@@ -14,21 +14,21 @@ const Contact = () => {
     <>
       <Header />
       <div className="lg:max-w-[1300px] pl-[24px] pr-[24px] mx-auto mb-[160px]">
-        <div className=" flex justify-between ">
-          <div className="bg-[#2967BC] mt-[46px] w-[573px] h-[684px] flex justify-center flex-col px-[107px] gap-[24.5px] text-white rounded-[10px]">
+        <div className=" flex justify-between flex-col-reverse lg:flex-row">
+          <div className="bg-[#2967BC] mt-[46px] w-[326px] lg:w-[573px] h-[246px] lg:h-[684px] flex justify-center flex-col lg:px-[107px] px-[73px] gap-[24.5px] text-white rounded-[10px]">
             <div className=" flex gap-[15.5px]">
-              <img src={WebIcon} />
+              <img src={WebIcon} className=" w-[10%] object-contain" />
               <p className=" py-[auto]">internpulse.com</p>
             </div>
             <div className=" flex gap-[15.5px]">
-              <img src={MailIcon} />
+              <img src={MailIcon} className=" w-[10%] object-contain" />
               <p className=" py-[auto]">internpulsehq@gmail.com</p>
             </div>
             <div className=" flex gap-[15.5px]">
-              <img src={CallIcon} />
+              <img src={CallIcon} className=" w-[10%] object-contain" />
               <p className=" py-[auto]">+2348061185623</p>
             </div>
-            <div className=" flex gap-[31px] pt-[162px] ">
+            <div className=" flex gap-[31px]  lg:pt-[162px] pt-[15px]">
               <img src={TwitterIcon} className=" w-[10%] object-contain" />
               <img src={InstagramIcon} className=" w-[10%] object-contain" />
               <img src={FacebookIcon} className=" w-[10%] object-contain" />
@@ -36,7 +36,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className=" mt-[46px] flex justify-center flex-col px-[107px] gap-[24.5px]">
+          <div className=" mt-[46px] flex justify-center flex-col lg:px-[107px]  px-[24px] gap-[24.5px]">
             <h1 className=" text-[#222425] text-5xl">Contact Us</h1>
             <p className=" text-[#63696E]">
               We are eager to discuss this internship with you, and answer any
