@@ -81,7 +81,7 @@ const Footer = () => {
       </div>
       <hr className="bg-primary-300 mb-4" />
 
-      <div className="flex  flex-row items-center sm:items-center justify-between sm:gap-4 gap-2  text-xs sm:text-base">
+      <div className="flex  flex-row items-center sm:items-center justify-between sm:gap-4 gap-2  text-[0.6rem] sm:text-base">
         <div className="text-white">&copy; 2024 . All rights reserved.</div>
         <div className="flex flex-row items-center justify-between gap-4">
           <div className="text-white ">Privacy Policy</div>
