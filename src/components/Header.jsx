@@ -17,7 +17,7 @@ function Header() {
           </a>
         </div>
         <div className="hidden md:flex items-center  space-x-4">
-          <nav className="flex-shrink ">
+          <nav className="flex-shrink mr-14">
             <a
               href="#"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
@@ -95,7 +95,7 @@ function Header() {
             Hire Talent
           </a>
         </div>
-        <button className="bg-primary-500 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-sm font-medium mt-2 w-full">
+        <button className="bg-neutral-200 hover:bg-neutral-100 text-neutral-700 px-3 py-2 rounded-md text-sm font-medium mt-2 w-full">
           Enroll Now
         </button>
       </nav>
