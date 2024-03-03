@@ -21,3 +21,7 @@ h6 {
 .word-spacing {
   word-spacing: 10px;
 }
+
+.custome-max-width {
+  width: 483px;
+}
