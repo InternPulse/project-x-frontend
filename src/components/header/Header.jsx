@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LOGO from "../assets/InternPulse.png";
+import LOGO from "../../assets/InternPulse.png";
 import { Link } from "react-router-dom";
 
 function Header() {
