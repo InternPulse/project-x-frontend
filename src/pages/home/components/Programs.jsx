@@ -5,17 +5,17 @@ import Computer from "../../../assets/Computer.png";
 
 const Programs = () => {
   return (
-    <section className="bg-[#F7F7FC] p-10 min:h-screen  ">
+    <section className="bg-[#F7F7FC]   p-[3rem] md:p-[5rem]">
       <div className="text-center   ">
-        <h2 className="text-2xl font-bold text-center mb-8">Our Programs</h2>
-        <p className="mb-4 ">
+        <h2 className="text-2xl font-bold text-center ">Our Programs</h2>
+        <p className="mb-8 mx-0 sm:mx-[8rem] text-center">
           We have four tracks that focus on participants with prior experience
           either through courses, bootcamps or self-learning. You must have
           prior coding or design skills/knowledge.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2  lg:gap-2 ">
-        <div className="bg-white rounded-xl p-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4  lg:gap-4 ">
+        <div className="bg-white rounded-xl p-10 ]">
           <div className="mb-4">
             <img src={Computer} alt="" />
           </div>
@@ -29,7 +29,7 @@ const Programs = () => {
           </p>
           <p className="font-semibold">HTML | CSS | Javascript | ReactJs</p>
         </div>
-        <div className="bg-white rounded-xl p-10">
+        <div className="bg-white rounded-xl p-10 ">
           <div className="mb-4">
             <img src={Tv} alt="" />
           </div>

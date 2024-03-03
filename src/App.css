@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cal Sans";
+  font-optical-sizing: auto;
+}
+
+.hire-talent::-webkit-scrollbar {
+  display: none;
+}
+
+.word-spacing {
+  word-spacing: 10px;
+}

@@ -9,7 +9,7 @@ import Group8 from "../../../assets/Group8.png";
 
 const Skills = () => {
   return (
-    <section className="p-10 min:h-screen ">
+    <section className="   p-[3rem] md:p-[5rem]">
       <div>
         <h2 className="text-2xl font-bold text-center mb-8">
           What You’ll Gain

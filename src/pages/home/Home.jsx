@@ -11,8 +11,8 @@ import AccordionC from "./components/AccordionC";
 
 const Home = () => {
   return (
-    <div className="max-w-[1440px] mx-auto">
-      <section className="flex flex-col lg:flex-row justify-between  min:h-screen  ">
+    <div className="max-w-[1440px] ">
+      <section className="flex flex-col lg:flex-row  gap-7 justify-between    px-[1rem] sm:px-[5rem] ">
         <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
           <div className="text-center  lg:text-left">
             <h2 className="text-4xl font-bold mb-8">
@@ -38,12 +38,12 @@ const Home = () => {
         </div>
 
         <div className="hidden lg:flex ">
-          <img src={HeroImage} alt="Hero Image" className="w-[80%] h-[80%]" />
+          <img src={HeroImage} alt="Hero Image" className="w-[90%] " />
         </div>
       </section>
-      <section className=" flex gap-[50px] flex-col justify-between items-center  lg:flex-row  min:h-screen ">
+      <section className=" flex gap-[50px] flex-col justify-between items-center  lg:flex-row     p-[3rem] md:p-[5rem]">
         <div className="lg:w-[483px]  text-center lg:text-left">
-          <h2 className="text-3xl font-bold mb-8">
+          <h2 className="text-2xl font-bold mb-8">
             The Hard Truth: Degrees and courses alone won’t cut it!
           </h2>
           <p className="text-gray-700 mb-8">
@@ -55,15 +55,15 @@ const Home = () => {
             build real-world solutions that solve their business problems.
           </p>
         </div>
-        <div className=" relative bg-blue-50 h-[340px] w-[375px] sm:w-[425px]">
-          <div className="absolute left-[0px] sm:left-[22px] top-[80px]  rounded-tr-[7.5rem]  rounded-tl-[7.5rem] bg-accent-200 p-4 h-[250px] w-[220px] ">
+        <div className=" relative bg-blue-50 h-[340px] w-[375px] sm:w-[425px] lg:w-[450px]">
+          <div className="absolute left-[0px] md:left-[22px] top-[80px]  rounded-tr-[7.5rem]  rounded-tl-[7.5rem] bg-accent-200 p-4 h-[250px] w-[220px] ">
             <img
               src={PrettyLady}
               alt=""
               className="absolute bottom-[15px] right-[0px] "
             />
           </div>
-          <div className="absolute top-[0px] left-[213px] sm:left-[237px] rounded-tr-[5rem] bg-accent-200  h-[200px] w-[162px] sm:w-[170px]">
+          <div className="absolute top-[0px] left-[213px] md:left-[237px] rounded-tr-[5rem] bg-accent-200  h-[200px] w-[162px] sm:w-[170px]">
             <img
               src={Man}
               alt=""
@@ -74,12 +74,12 @@ const Home = () => {
       </section>
       <Skills />
 
-      <section className="relative flex flex-col md:flex-row items-center justify-between gap-[10rem]  min:h-screen ">
-        <div className="relative w-full sm:w-[300px] md:w-[400px] h-[400px]  mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
+      <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem]    p-[3rem] md:p-[5rem] ">
+        <div className="relative w-[90%]  sm:w-[300px] md:w-[400px] h-[185px] lg:h-[400px] mt-[8rem] sm:mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
           <img
             src={ExcitedMan}
             alt="Excited Young Man"
-            className="w-full  object-cover object-center absolute bottom-[40px] left-[40px]"
+            className="w-full   object-center absolute bottom-[10px] sm:bottom-[40px] left-[20px] lg:left-[40px]"
           />
         </div>
         <div className="text-center md:text-left lg:w-[483px]  lg:text-left  ">
@@ -102,7 +102,7 @@ const Home = () => {
         </div>
       </section>
       <Programs />
-      <section className="  min:h-screen  ">
+      <section className="   p-[3rem] md:p-[5rem] ">
         <div className="text-center   ">
           <h2 className="text-2xl font-bold text-center mb-8">
             Secure your spot today
@@ -146,14 +146,14 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className=" min:h-screen  bg-neutral-50 ">
-        <div className="text-center mb-[5rem] sm:mb-8  ">
+      <section className="  bg-neutral-50 p-[3rem] md:p-[5rem]">
+        <div className="text-center mb-[2rem] sm:mb-8  ">
           <h2 className="text-2xl font-bold text-center ">Our Testimonials</h2>
           <p>See what people are saying about InternPulse!</p>
         </div>
         <Slider />
       </section>
-      <section className=" p-10 min:h-screen ">
+      <section className=" p-[3rem] md:p-[5rem]">
         <h2 className="text-2xl font-bold text-center mb-8">
           Frequently Asked Questions
         </h2>
