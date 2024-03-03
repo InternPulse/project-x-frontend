@@ -10,8 +10,8 @@ function Header() {
   };
 
   return (
-    <header className="bg-white  relative  border-b border-neutral-200">
-      <div className="max-w-7xl mx-6 h-[66px] flex justify-between items-center lg:mx-auto">
+    <header className="bg-white  relative  border-b border-neutral-200  ">
+      <div className="max-w-7xl mx-6 h-[66px] flex justify-between items-center ">
         <div>
           <a href="/" className="flex items-center h-full">
             <img src={LOGO} alt="Logo" className="h-9 w-auto" />
@@ -29,18 +29,18 @@ function Header() {
               href="#"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
-              <Link to="/Contact">Contact</Link>
+              Contact
             </a>
-            <Link
-              to={"/HireTalent"}
+            <a
+              href="#"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Hire Talent
-            </Link>
+            </a>
           </nav>
           <div>
             <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
-              <Link to="/Enrollment">Enroll Now</Link>
+              Enroll Now
             </button>
           </div>
         </div>

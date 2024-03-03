@@ -4,6 +4,7 @@ import HeroArc from "../../assets/HeroArc.png";
 import Man from "../../assets/Man.png";
 import PrettyLady from "../../assets/PrettyLady.png";
 import ExcitedMan from "../../assets/ExcitedMan.png";
+import Curve from "../../assets/Curve.png";
 import Skills from "./components/Skills";
 import Programs from "./components/Programs";
 import Slider from "./components/Slider";
@@ -14,7 +15,7 @@ const Home = () => {
   return (
     <Layout>
       <div className="max-w-[1440px] ">
-        <section className="flex flex-col lg:flex-row  gap-7 justify-between    px-[1rem] sm:px-[5rem] ">
+        <section className="flex flex-col lg:flex-row  gap-7 justify-between    px-[1rem] sm:px-[5rem] relative">
           <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
             <div className="text-center  lg:text-left">
               <h2 className="text-4xl font-bold mb-8">
@@ -42,6 +43,9 @@ const Home = () => {
 
           <div className="hidden lg:flex ">
             <img src={HeroImage} alt="Hero Image" className="w-[90%] " />
+          </div>
+          <div className="absolute bottom-[0px] left-[130px] hidden lg:flex">
+            <img src={Curve} alt="" />
           </div>
         </section>
         <section className=" flex gap-[50px] flex-col justify-between items-center  lg:flex-row     p-[3rem] md:p-[5rem]">
@@ -79,11 +83,11 @@ const Home = () => {
         <Skills />
 
         <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem]    p-[3rem] md:p-[5rem] ">
-          <div className="relative w-[90%]  sm:w-[300px] md:w-[400px] h-[185px] lg:h-[400px] mt-[8rem] sm:mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
+          <div className="relative w-[90%]  sm:w-[300px] md:w-[400px] h-[150px] lg:h-[350px] mt-[8rem] sm:mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
             <img
               src={ExcitedMan}
               alt="Excited Young Man"
-              className="w-full   object-center absolute bottom-[10px] sm:bottom-[40px] left-[20px] lg:left-[40px]"
+              className="w-full   object-center absolute bottom-[10px] sm:bottom-[40px] left-[34px] lg:left-[40px]"
             />
           </div>
           <div className="text-center md:text-left lg:w-[483px]  lg:text-left  ">
