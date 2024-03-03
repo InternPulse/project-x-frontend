@@ -1,4 +1,3 @@
-import React from "react";
 import man from "../../assets/enrollmentImage.png";
 import Header from "../../components/Header";
 
@@ -11,7 +10,7 @@ const EnrollmentScreen = () => {
           <div className=" lg:w-[60%] md:w-full mt-[51px]">
             <h1 className=" text-2xl lg:text-5xl leading-normal lg:leading-normal">
               Be the Hero of Your Story <br /> Shape Your Future with <br />
-              <span className=" text-primary-500"> InternPluse.</span> 
+              <span className=" text-primary-500"> InternPulse.</span>
             </h1>
             <h3 className=" pt-[32px]">
               Kindly fill out this little Survey to proceed{" "}
@@ -32,7 +31,7 @@ const EnrollmentScreen = () => {
                   </div>
                 </li>
                 <li className=" pt-[40px]">
-                  2. Have you worked on any real-world solutions that solve{" "}
+                  2. Have you worked on any real-world solutions that solve
                   <br className=" hidden lg:block" />
                   business problems?
                   <div className=" flex gap-[30px] pt-[20px] ">
