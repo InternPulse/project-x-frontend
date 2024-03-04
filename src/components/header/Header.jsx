@@ -74,29 +74,23 @@ function Header() {
       <nav
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-full left-0 w-full bg-white border rounded-lg`}
+        } md:hidden absolute top-full left-0 w-full bg-primary-500  text-center `}
       >
-        <div className="px-4 py-2">
-          <a
-            href="#"
-            className="block text-gray-600 hover:text-primary-500 py-1"
-          >
+        <div className="px-5 py-2 text-primary-100">
+          <a href="#" className="block  hover:text-primary-200 py-3">
+            Programs
+          </a>
+          <a href="#" className="block hover:text-primary-200 py-3">
             Testimonial
           </a>
-          <a
-            href="#"
-            className="block text-gray-600 hover:text-primary-500 py-1"
-          >
+          <a href="#" className="block  hover:text-primary-200 py-3">
             Contact
           </a>
-          <a
-            href="#"
-            className="block text-gray-600 hover:text-primary-500 py-1"
-          >
+          <a href="#" className="block hover:text-primary-200 py-3">
             Hire Talent
           </a>
         </div>
-        <button className="bg-primary-500 hover:bg-primary-700 text-white  px-3 py-2 rounded-md text-sm font-medium mt-2 w-full">
+        <button className="bg-primary-200 hover:bg-primary-300 text-primary-50 my-10 px-3 py-2 rounded-md text-sm font-medium mt-2 w-[78%]">
           Enroll Now
         </button>
       </nav>
