@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <Layout>
       <div className="max-w-[1440px] ">
-        <section className="flex flex-col lg:flex-row  gap-7 justify-between    px-[1rem] sm:px-[5rem] relative">
+        <section className="flex flex-col lg:flex-row  gap-7 justify-between    px-[1rem] sm:px-[5rem] ">
           <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
             <div className="text-center  lg:text-left">
               <h2 className="text-4xl font-bold mb-8">
@@ -28,15 +28,6 @@ const Home = () => {
                 At InternPulse, you explore exciting opportunities to gain
                 hands-on experience on real-life projects that can be tailored
                 to your resume and portfolio.
-              </p>
-              <p className="text-gray-700 mb-8">
-                While completing tech courses, bootcamps, or even a computer
-                science degree is a commendable achievement, it’s often not
-                enough to secure your first tech job or opportunity.
-                Employers/Businesses don’t care about your certificates,
-                bootcamps, your todo apps, AirBnB clone, Netflix clone, or
-                Instagram clone. They only care about how you can build
-                real-world solutions that solve their business problems.
               </p>
             </div>
 
@@ -53,9 +44,6 @@ const Home = () => {
           <div className="hidden lg:flex ">
             <img src={HeroImage} alt="Hero Image" className="w-[90%] " />
           </div>
-          <div className="absolute bottom-[0px] left-[130px] hidden lg:flex">
-            <img src={Curve} alt="" />
-          </div>
         </section>
         <section className=" flex gap-[50px] flex-col justify-between items-center  lg:flex-row     p-[3rem] md:p-[5rem]">
           <div className="lg:w-[483px]  text-center lg:text-left">
@@ -71,25 +59,6 @@ const Home = () => {
               about how you can build real-world solutions that solve their
               business problems.
             </p>
-          </div>
-        </section>
-        <section className="flex flex-col md:flex-row lg:flex-row p-[3rem] md:p-[5rem] gap-[4rem] md:gap-[4rem] lg:gap-[4rem]">
-          <div className="md:w-1/2 lg:w-1/2">
-            <div className="md:max-w-[483px] lg:max-w-[483px]">
-              <h2 className="text-xl md:text-2xl font-bold mb-8">
-                The Hard Truth: Degrees and courses alone won’t cut it!
-              </h2>
-              <p>
-                While completing tech courses, bootcamps, or even a computer
-                science degree is a commendable achievement, it’s often not
-                enough to secure your first tech job or opportunity.
-                Employers/Businesses don’t care about
-                your certificates, bootcamps, your todo
-                apps, AirBnB clone, Netflix clone, or Instagram clone.They
-                only care about how you can build real-world
-                solutions that solve their business problems.
-              </p>
-            </div>
           </div>
           <div className=" relative bg-blue-50 h-[340px] w-[375px] sm:w-[425px] lg:w-[450px]">
             <div className="absolute left-[0px] md:left-[22px] top-[80px]  rounded-tr-[7.5rem]  rounded-tl-[7.5rem] bg-accent-200 p-4 h-[250px] w-[220px] ">
@@ -108,6 +77,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+
         <Skills />
 
         <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem]    p-[3rem] md:p-[5rem] ">
