@@ -1,5 +1,5 @@
 import man from "../../assets/enrollmentImage.png";
-import Header from "../../components/Header";
+import Header from "../../components/header/Header";
 
 const EnrollmentScreen = () => {
   return (
