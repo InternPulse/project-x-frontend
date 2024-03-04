@@ -48,7 +48,7 @@ function Header() {
           <button
             type="button"
             onClick={toggleMenu}
-            className="bg-gray-100 p-2 rounded inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-400"
+            className=" p-2 rounded inline-flex items-center justify-center  hover:bg-primary-50 text-primary-500  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
             aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open menu</span>
@@ -96,7 +96,7 @@ function Header() {
             Hire Talent
           </a>
         </div>
-        <button className="bg-neutral-200 hover:bg-neutral-100 text-neutral-700 px-3 py-2 rounded-md text-sm font-medium mt-2 w-full">
+        <button className="bg-primary-500 hover:bg-primary-700 text-white  px-3 py-2 rounded-md text-sm font-medium mt-2 w-full">
           Enroll Now
         </button>
       </nav>

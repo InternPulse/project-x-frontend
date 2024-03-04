@@ -1,6 +1,5 @@
 import React from "react";
 import HeroImage from "../../assets/HeroImage.png";
-import HeroArc from "../../assets/HeroArc.png";
 import Man from "../../assets/Man.png";
 import PrettyLady from "../../assets/PrettyLady.png";
 import ExcitedMan from "../../assets/ExcitedMan.png";
@@ -15,15 +14,16 @@ const Home = () => {
   return (
     <Layout>
       <div className="max-w-[1440px] ">
-        <section className="flex flex-col lg:flex-row  gap-7 justify-between    px-[1rem] sm:px-[5rem] ">
+        <section className="flex flex-col lg:flex-row  gap-4 justify-between h-[500px] lg:h-[700px]     px-[1rem] sm:px-[8rem]  ">
           <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
-            <div className="text-center  lg:text-left">
-              <h2 className="text-4xl font-bold mb-8">
+            <div className="text-center  lg:text-left ">
+              <h2 className="text-4xl font-bold mb-8 leading-[1.3]">
                 Looking for{" "}
                 <span className="text-primary-500">Opportunity</span> to gain
                 Relevant Work{" "}
                 <span className="text-accent-700">Experience?</span>
               </h2>
+
               <p className="text-gray-700 mb-5 bg-neut">
                 At InternPulse, you explore exciting opportunities to gain
                 hands-on experience on real-life projects that can be tailored
@@ -31,7 +31,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="mb-4 flex gap-4 justify-start md:justify-center items-center">
+            <div className="mt-8 flex gap-4 justify-start md:justify-center items-center">
               <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl mr-2">
                 Enroll Now
               </button>
@@ -42,7 +42,10 @@ const Home = () => {
           </div>
 
           <div className="hidden lg:flex ">
-            <img src={HeroImage} alt="Hero Image" className="w-[90%] " />
+            <img src={HeroImage} alt="Hero Image" className="w-[100%] " />
+          </div>
+          <div className="absolute bottom-[-215px] left-[22rem] hidden lg:flex ">
+            <img src={Curve} alt="" className="w-[80%]" />
           </div>
         </section>
         <section className=" flex gap-[50px] flex-col justify-between items-center  lg:flex-row     p-[3rem] md:p-[5rem]">
@@ -81,11 +84,11 @@ const Home = () => {
         <Skills />
 
         <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem]    p-[3rem] md:p-[5rem] ">
-          <div className="relative w-[90%]  sm:w-[300px] md:w-[400px] h-[150px] lg:h-[350px] mt-[8rem] sm:mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
+          <div className="relative w-[90%]  sm:w-[300px] md:w-[400px] h-[185px] lg:h-[400px] mt-[8rem] sm:mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
             <img
               src={ExcitedMan}
               alt="Excited Young Man"
-              className="w-full   object-center absolute bottom-[10px] sm:bottom-[40px] left-[34px] lg:left-[40px]"
+              className="w-full   object-center absolute bottom-[10px] sm:bottom-[40px] left-[20px] lg:left-[40px]"
             />
           </div>
           <div className="text-center md:text-left lg:w-[483px]  lg:text-left  ">
