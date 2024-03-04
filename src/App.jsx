@@ -4,6 +4,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Welcome from "./pages/Welcome";
 import HireTalent from "./pages/HireTalent";
+import ResetPassword from "./pages/ResetPassword"
+import ForgotPassword from "./pages/ForgotPassword"
 import "cal-sans";
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Welcome" element={<Welcome />} />
           <Route path="/HireTalent" element={<HireTalent />} />
+          <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
+          <Route path="/ResetPassword" element={<ResetPassword/>}/>
         </Routes>
       </BrowserRouter>
     </>
