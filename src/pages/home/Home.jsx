@@ -31,9 +31,9 @@ const Home = () => {
                 </p>
               <p className="text-gray-700 mb-8">
                 While completing tech courses, bootcamps, or even a computer
-                science degree is a commendable achievement, it{"'"}s often not
+                science degree is a commendable achievement, it’s often not
                 enough to secure your first tech job or opportunity.
-                Employers/Businesses don{"'"}t care about your certificates,
+                Employers/Businesses don’t care about your certificates,
                 bootcamps, your todo apps, AirBnB clone, Netflix clone, or
                 Instagram clone. They only care about how you can build
                 real-world solutions that solve their business problems.
@@ -76,16 +76,17 @@ const Home = () => {
           <div className="md:w-1/2 lg:w-1/2">
             <div className="md:max-w-[483px] lg:max-w-[483px]">
               <h2 className="text-xl md:text-2xl font-bold mb-8">
-                The Hard Truth: Degrees and courses alone wont cut it!
+                The Hard Truth: Degrees and courses alone won’t cut it!
               </h2>
               <p>
-                While completing tech courses, bootcamps, or even a computer
-                science degree is a commendable achievement, it{"'"}s often not
-                enough to secure your first tech job or opportunity.
-                Employers/Businesses don{"'"}t care about your certificates,
-                bootcamps, your todo apps, AirBnB clone, Netflix clone, or
-                Instagram clone.They only care about how you can build
-                real-world solutions that solve their business problems.
+                While completing tech courses, bootcamps, or even a computer
+                science degree is a commendable achievement, it’s often not
+                enough to secure your first tech job or opportunity.
+                Employers/Businesses don’t care about
+                your certificates, bootcamps, your todo
+                apps, AirBnB clone, Netflix clone, or Instagram clone.They
+                only care about how you can build real-world
+                solutions that solve their business problems.
               </p>
             </div>
           </div>
