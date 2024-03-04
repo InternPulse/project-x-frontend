@@ -28,6 +28,7 @@ const Home = () => {
                 At InternPulse, you explore exciting opportunities to gain
                 hands-on experience on real-life projects that can be tailored
                 to your resume and portfolio.
+                </p>
               <p className="text-gray-700 mb-8">
                 While completing tech courses, bootcamps, or even a computer
                 science degree is a commendable achievement, it{"'"}s often not
@@ -70,6 +71,7 @@ const Home = () => {
               about how you can build real-world solutions that solve their
               business problems.
             </p>
+            </section>
         <section className="flex flex-col md:flex-row lg:flex-row p-[3rem] md:p-[5rem] gap-[4rem] md:gap-[4rem] lg:gap-[4rem]">
           <div className="md:w-1/2 lg:w-1/2">
             <div className="md:max-w-[483px] lg:max-w-[483px]">
@@ -193,6 +195,7 @@ const Home = () => {
           </h2>
           <AccordionC />
         </section>
+      </div>
       </div>
     </Layout>
   );
