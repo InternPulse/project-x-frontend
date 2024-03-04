@@ -14,6 +14,7 @@ const Contact = lazy(() => import("./pages/contact/Contact"));
 const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
 
 import "cal-sans";
+import PaymentOptions from "./pages/paymentOptions/PaymentOptions";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/Welcome" element={<Welcome />} />
           <Route path="/HireTalent" element={<HireTalent />} />
           <Route path="/Enrollment" element={<Enrollment />} />
+          <Route path="/payment-options" element={<PaymentOptions />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="*" element={<ForgotPassword />} />
         </Routes>
