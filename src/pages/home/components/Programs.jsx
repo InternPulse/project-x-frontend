@@ -15,7 +15,7 @@ const Programs = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4  lg:gap-4 ">
-        <div className="bg-white rounded-xl p-10 ]">
+        <div className="bg-white rounded-xl p-10 ] transition duration-300 transform hover:scale-90">
           <div className="mb-4">
             <img src={Computer} alt="" />
           </div>
@@ -29,7 +29,7 @@ const Programs = () => {
           </p>
           <p className="font-semibold">HTML | CSS | Javascript | ReactJs</p>
         </div>
-        <div className="bg-white rounded-xl p-10 ">
+        <div className="bg-white rounded-xl p-10 transition duration-300 transform hover:scale-90">
           <div className="mb-4">
             <img src={Tv} alt="" />
           </div>
@@ -43,7 +43,7 @@ const Programs = () => {
           </p>
           <p className="font-semibold">Python | NodeJS | PHP | Go</p>
         </div>
-        <div className="bg-white rounded-xl p-10">
+        <div className="bg-white rounded-xl p-10 transition duration-300 transform hover:scale-90">
           <div className="mb-4">
             <img src={Telephone} alt="" />
           </div>
@@ -55,7 +55,7 @@ const Programs = () => {
           </p>
           <p className="font-semibold">| Figma |</p>
         </div>
-        <div className="bg-white rounded-xl p-10">
+        <div className="bg-white rounded-xl p-10 transition duration-300 transform hover:scale-90">
           <div className="mb-4">
             <img src={ManagerIcon} alt="" />
           </div>
