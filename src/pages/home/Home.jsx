@@ -42,13 +42,10 @@ const Home = () => {
               </button>
             </div>
 
-
             <div className="absolute bottom-[0px] left-[227px] hidden lg:flex ">
               <img src={Curve} alt="" className="w-[70%]" />
             </div>
-
           </div>
-         
 
           <div className="hidden lg:flex w-[315px] animate-bounce-custom ">
             <img
@@ -73,15 +70,15 @@ const Home = () => {
               business problems.
             </p>
           </div>
-          <div className="relative bg-blue-50 h-[340px] w-[420px] mx-auto">
-            <div className="absolute left-[30px] top-[80px]  rounded-tr-[7.5rem]  rounded-tl-[7.5rem] bg-accent-200 p-4 h-[250px] w-[220px] max-w-full">
+          <div className=" relative bg-blue-50 h-[340px] w-[375px] sm:w-[425px] lg:w-[450px]">
+            <div className="absolute left-[0px] md:left-[22px] top-[80px]  rounded-tr-[7.5rem]  rounded-tl-[7.5rem] bg-accent-200 p-4 h-[250px] w-[220px] ">
               <img
                 src={PrettyLady}
                 alt=""
                 className="absolute bottom-[15px] right-[0px] "
               />
             </div>
-            <div className="absolute top-[0px] left-[240px] rounded-tr-[5rem] bg-accent-200  h-[200px] min-w-[170px]">
+            <div className="absolute top-[0px] left-[213px] md:left-[237px] rounded-tr-[5rem] bg-accent-200  h-[200px] w-[162px] sm:w-[170px]">
               <img
                 src={Man}
                 alt=""
@@ -90,7 +87,6 @@ const Home = () => {
             </div>
           </div>
         </section>
-
         <Skills />
 
         <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem]    p-[3rem] md:p-[5rem] ">
