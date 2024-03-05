@@ -1,4 +1,4 @@
-import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
+import internPulseLogo from "../../assets/InternPulseLogo.svg";
 import signUpImg from "../../assets/sign-up-image.svg";
 import { Link } from "react-router-dom";
 

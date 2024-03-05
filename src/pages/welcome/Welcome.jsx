@@ -1,5 +1,5 @@
 import welcomeImage from "../../assets/Rectangle 40.svg";
-import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
+import internPulseLogo from "../../assets/InternPulseLogo.svg";
 import { Link } from "react-router-dom";
 
 const Welcome = () => {

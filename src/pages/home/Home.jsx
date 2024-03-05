@@ -15,7 +15,7 @@ const Home = () => {
     <Layout>
       <div className="max-w-[1440px] ">
         <section className="flex flex-col lg:flex-row  gap-10 justify-between  sm:min-h-[80%]  h-[650px]   lg:mb-[4rem] mb-[-12rem] px-[1rem] sm:px-[8rem]  ">
-          <div className="relative md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
+          <div className="relative md:mt-[80px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
             <div className="text-center lg:text-left ">
               <h2 className="text-4xl font-bold mb-8 leading-[1.3]">
                 Looking for{" "}
