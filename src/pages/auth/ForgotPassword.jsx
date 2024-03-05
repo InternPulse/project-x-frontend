@@ -1,7 +1,7 @@
 import { useState } from 'react'; 
-import internpulselogo from '../assets/InternPulse logo 32px.svg'
-import studentimage from '../assets/studentimage.svg'
-import success_icon from '../assets/successicon.svg'
+import internpulselogo from '../../assets/InternPulse logo 32px.svg'
+import studentimage from '../../assets/studentimage.svg'
+import success_icon from '../../assets/successicon.svg'
 
 
 export default function ForgotPassword() {
