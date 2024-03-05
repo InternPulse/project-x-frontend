@@ -1,7 +1,7 @@
 import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
 import resetPasswordImg from "../../assets/reset-password-img.svg";
 
-const ForgotPassword = () => {
+const ResetPassword = () => {
   return (
     <main className="h-screen flex">
       <div className="h-full w-1/2 hidden md:block lg:block">
@@ -20,31 +20,43 @@ const ForgotPassword = () => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
               Reset Password
             </h1>
-            <p className="mt-[16px] mx-w-[400px] text-20 text-neutral-600">
-              Enter the Email address used to create your Internpulse account
-              and we will send you a link to reset your password
-            </p>
             <form action="" className="mt-[32px] lg:mt-[52px]">
               <div className="flex flex-col" style={{ gap: "30px" }}>
                 <div className="flex flex-col">
                   <label
                     style={{ marginBottom: "14px" }}
-                    htmlFor="email"
+                    htmlFor="password"
                     className="font-bold"
                   >
-                    Enter Email Address
+                    Enter your new Password
                   </label>
                   <input
                     className="rounded-md p-3"
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Joepaul@gmail.com"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="*************"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label
+                    style={{ marginBottom: "14px" }}
+                    htmlFor="password"
+                    className="font-bold"
+                  >
+                    Confirm Password
+                  </label>
+                  <input
+                    className="rounded-md p-3"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="*************"
                   />
                 </div>
               </div>
               <button className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-4 hover:bg-primary-700 mt-[40px] lg:mt-[50px]">
-                Next
+                Submit
               </button>
             </form>
           </div>
@@ -54,4 +66,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ResetPassword;

@@ -12,6 +12,7 @@ const HireTalent = lazy(() => import("./pages/HireTalent/HireTalent"));
 const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
 const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
+const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 
 import "cal-sans";
 import PaymentOptions from "./pages/paymentOptions/PaymentOptions";
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Welcome" element={<Welcome />} />
