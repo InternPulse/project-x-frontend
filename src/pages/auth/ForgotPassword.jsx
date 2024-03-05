@@ -1,65 +1,57 @@
-import { useState } from 'react'; 
-import internpulselogo from '../../assets/InternPulse logo 32px.svg'
-import studentimage from '../../assets/studentimage.svg'
-import success_icon from '../../assets/successicon.svg'
+import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
+import resetPasswordImg from "../../assets/reset-password-img.svg";
 
-
-export default function ForgotPassword() {
-  const [modal, setModal] = useState(false);
-
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+const ForgotPassword = () => {
   return (
-    <main className='w-full h-auto'>
-      <div className='flex'>
+    <main className="h-screen flex">
       <div className="h-full w-1/2 hidden md:block lg:block">
-        <img className="h-2/5 object-fit:cover object-position: center" style={{ backfaceVisibility: 'hidden', imageRendering: 'crisp-edges',}} src={studentimage} alt="" />
+        <img
+          className="h-full w-full object-cover"
+          src={resetPasswordImg}
+          alt=""
+        />
       </div>
-      <div className='container mx-auto w-full'>
-      <div className="items-center h-full w-full">
-        <div className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white text-left xs:text-left md:text-center lg:text-center">
-          <img src={internpulselogo} alt="Intern Pulse Logo" className='mx-auto inline-block'/>
+      <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll  bg-neutral-30 md:bg-inherit lg:bg-inherit">
+        <div className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white shadow-lg md:shadow-none lg:shadow-none">
+          <img src={internPulseLogo} alt="Intern Pulse Logo" />
         </div>
-          <div className="w-11/12 mx-auto">
-          <div>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Reset Password</h1>
-          <p>Enter the Email address used to create your Interpulse account and we will send you a link to reset your password</p>
-          </div>
-          <div>
-            <form action=""  method="post">
-              <label htmlFor="">Enter Email Address</label><br />
-              <input type="email" name="email" id="email" placeholder="Joepaul@gmail.com" />
+        <div className="px-6 w-full">
+          <div className="w-full mx-auto lg:w-546">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+              Reset Password
+            </h1>
+            <p className="mt-[16px] mx-w-[400px] text-20 text-neutral-600">
+              Enter the Email address used to create your Internpulse account
+              and we will send you a link to reset your password
+            </p>
+            <form action="" className="mt-[32px] lg:mt-[52px]">
+              <div className="flex flex-col" style={{ gap: "30px" }}>
+                <div className="flex flex-col">
+                  <label
+                    style={{ marginBottom: "14px" }}
+                    htmlFor="email"
+                    className="font-bold"
+                  >
+                    Enter Email Address
+                  </label>
+                  <input
+                    className="rounded-md p-3"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Joepaul@gmail.com"
+                  />
+                </div>
+              </div>
+              <button className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-4 hover:bg-primary-700 mt-[40px] lg:mt-[50px]">
+                Next
+              </button>
             </form>
-            <button className='w-full h-full bg-primary-500 rounded-lg' onClick={toggleModal}>Next</button>
-          </div>
           </div>
         </div>
       </div>
-      </div>
-      {modal && (
-            <div>
-              <div
-                className="modal fade"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <img src={success_icon} alt="" />
-                    </div>
-                          <button
-                            className=""
-                            onClick={toggleModal}
-                          >
-                            Back to Login
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-          )}
     </main>
-  )
-}
+  );
+};
 
+export default ForgotPassword;

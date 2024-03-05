@@ -51,7 +51,6 @@ const SignIn = () => {
                     name="password"
                     placeholder="*************"
                   />
-                  {/* <img src={eyeOpenImage} alt="" className="w-[25px]" /> */}
                 </div>
               </div>
               <button className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-4 hover:bg-primary-700 mt-[40px] lg:mt-[50px]">
