@@ -17,3 +17,11 @@ h6 {
 .hire-talent::-webkit-scrollbar {
   display: none;
 }
+
+.word-spacing {
+  word-spacing: 10px;
+}
+
+.custome-max-width {
+  width: 483px;
+}
