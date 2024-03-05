@@ -1,8 +1,9 @@
 import React from "react";
-import LinkedIn from "../../assets/LinkedIn.png";
-import Facebook from "../../assets/Facebook.png";
-import Twitter from "../../assets/Twitter.png";
-import Instagram from "../../assets/Instagram.png";
+
+import { FaLinkedin } from "react-icons/fa";
+import { RiTwitterXLine } from "react-icons/ri";
+import { FaInstagram } from "react-icons/fa";
+import { FaSquareFacebook } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -16,17 +17,29 @@ const Footer = () => {
               working experience within 8 weeks
             </p>
             <div className="flex gap-4">
-              <a href="/">
-                <img src={LinkedIn} alt="" />
+              <a
+                href="/"
+                className="bg-primary-500 text-white transition duration-100 transform hover:scale-110"
+              >
+                <FaLinkedin />
               </a>
-              <a href="/">
-                <img src={Twitter} alt="" />
+              <a
+                href="/"
+                className="bg-primary-500 text-white transition duration-100 transform hover:scale-110"
+              >
+                <RiTwitterXLine />
               </a>
-              <a href="/">
-                <img src={Instagram} alt="" />
+              <a
+                href="/"
+                className="bg-primary-500 text-white transition duration-100 transform hover:scale-110"
+              >
+                <FaInstagram />
               </a>
-              <a href="/">
-                <img src={Facebook} alt="" />
+              <a
+                href="/"
+                className="bg-primary-500 text-white transition duration-200 transform hover:scale-110"
+              >
+                <FaSquareFacebook />
               </a>
             </div>
           </div>
