@@ -1,62 +1,66 @@
+import React from "react";
 import HeroImage from "../../assets/HeroImage.png";
-// import HeroArc from "../../assets/HeroArc.png";
 import Man from "../../assets/Man.png";
 import PrettyLady from "../../assets/PrettyLady.png";
 import ExcitedMan from "../../assets/ExcitedMan.png";
+import Curve from "../../assets/Curve.png";
 import Skills from "./components/Skills";
 import Programs from "./components/Programs";
 import Slider from "./components/Slider";
-// import AccordionC from "./components/AccordionC";
-import AccordionC from './components/AccordionC'
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import AccordionC from "./components/AccordionC";
+import Layout from "../../components/layout/Layout";
 
 const Home = () => {
   return (
-    <main>
-      <Header />
-      <div className="max-w-[1440px] mx-auto">
-        <section className="flex flex-col lg:flex-row gap-7 justify-between px-[1rem] sm:px-[5rem]">
-          <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px]">
-            <div className="text-center lg:text-left">
-              <h2 className="text-4xl font-bold mb-8">
-                Looking for
-                <span className="text-primary-500">Opportunities</span> to gain
-                Relevant Work
+    <Layout>
+      <div className="max-w-[1440px] ">
+        <section className="flex flex-col lg:flex-row  gap-4 justify-between h-[500px] lg:h-[700px]     px-[1rem] sm:px-[8rem]  ">
+          <div className="md:mt-[110px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
+            <div className="text-center  lg:text-left ">
+              <h2 className="text-4xl font-bold mb-8 leading-[1.3]">
+                Looking for{" "}
+                <span className="text-primary-500">Opportunity</span> to gain
+                Relevant Work{" "}
                 <span className="text-accent-700">Experience?</span>
               </h2>
-              <p className="text-gray-700 mb-8">
-                While completing tech courses, bootcamps, or even a computer
-                science degree is a commendable achievement, it’s often not
-                enough to secure your first tech job or opportunity.
-                Employers/Businesses don’t care about your certificates,
-                bootcamps, your todo apps, AirBnB clone, Netflix clone, or
-                Instagram clone. They only care about how you can build
-                real-world solutions that solve their business problems.
+
+              <p className="text-gray-700 mb-5 bg-neut">
+                At InternPulse, you explore exciting opportunities to gain
+                hands-on experience on real-life projects that can be tailored
+                to your resume and portfolio.
               </p>
+            </div>
+
+            <div className="mt-8 flex gap-4 justify-start md:justify-center items-center">
+              <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl mr-2">
+                Enroll Now
+              </button>
+              <button className="bg-neutral-200 hover:bg-neutral-100 border border-solid border-primary-500 text-neutral-700 py-2 px-4 rounded-xl">
+                Learn More
+              </button>
             </div>
           </div>
           <div className="hidden lg:flex ">
-            <img src={HeroImage} alt="Hero Image" className="w-[90%] " />
+            <img src={HeroImage} alt="Hero Image" className="w-[100%] " />
+          </div>
+          <div className="absolute bottom-[-215px] left-[22rem] hidden lg:flex ">
+            <img src={Curve} alt="" className="w-[80%]" />
           </div>
         </section>
-        <section className="flex flex-col md:flex-row lg:flex-row p-[3rem] md:p-[5rem] gap-[4rem] md:gap-[4rem] lg:gap-[4rem]">
-          <div className="md:w-1/2 lg:w-1/2">
-            <div className="md:max-w-[483px] lg:max-w-[483px]">
-              <h2 className="text-xl md:text-2xl font-bold mb-8">
-                The Hard Truth: Degrees and courses alone won’t cut it!
-              </h2>
-              <p>
-                While completing tech courses, bootcamps, or even a computer
-                science degree is a commendable achievement, it’s often not
-                enough to secure your first tech job or opportunity.
-                Employers/Businesses don’t care about
-                your certificates, bootcamps, your todo
-                apps, AirBnB clone, Netflix clone, or Instagram clone.They
-                only care about how you can build real-world
-                solutions that solve their business problems.
-              </p>
-            </div>
+        <section className=" flex gap-[50px] flex-col justify-between items-center  lg:flex-row     p-[3rem] md:p-[5rem]">
+          <div className="lg:w-[483px]  text-center lg:text-left">
+            <h2 className="text-2xl font-bold mb-8">
+              The Hard Truth: Degrees and courses alone won’t cut it!
+            </h2>
+            <p className="text-gray-700 mb-8">
+              While completing tech courses, bootcamps, or even a computer
+              science degree is a commendable achievement, it’s often not enough
+              to secure your first tech job or opportunity. Employers/Businesses
+              don’t care about your certificates, bootcamps, your todo apps,
+              AirBnB clone, Netflix clone, or Instagram clone. They only care
+              about how you can build real-world solutions that solve their
+              business problems.
+            </p>
           </div>
           <div className="relative bg-blue-50 h-[340px] w-[420px] mx-auto">
             <div className="absolute left-[30px] top-[80px]  rounded-tr-[7.5rem]  rounded-tl-[7.5rem] bg-accent-200 p-4 h-[250px] w-[220px] max-w-full">
@@ -75,8 +79,10 @@ const Home = () => {
             </div>
           </div>
         </section>
+
         <Skills />
-        <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem] p-[3rem] md:p-[5rem]">
+
+        <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem]    p-[3rem] md:p-[5rem] ">
           <div className="relative w-[90%]  sm:w-[300px] md:w-[400px] h-[185px] lg:h-[400px] mt-[8rem] sm:mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
             <img
               src={ExcitedMan}
@@ -161,8 +167,7 @@ const Home = () => {
           <AccordionC />
         </section>
       </div>
-      <Footer />
-    </main>
+    </Layout>
   );
 };
 

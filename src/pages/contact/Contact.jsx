@@ -7,7 +7,7 @@ import FacebookIcon from "../../assets/icons/facebook_icon.png";
 import WhatsappIcon from "../../assets/icons/whatsapp_icon.png";
 import InstagramIcon from "../../assets/icons/instagram_icon.png";
 
-import Layout from "../../layout/layout";
+import Layout from "../../components/layout/Layout";
 
 const Contact = () => {
   return (
