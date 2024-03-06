@@ -26,17 +26,13 @@ function Header() {
               Testimonial
             </a>
             <a
-<<<<<<< HEAD
-              href="/Contact"
-=======
-              href="/#programs"
+              href="#"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Programs
             </a>
             <Link
               to="/contact"
->>>>>>> 81e51a3cc76d27c5f9f34e25625a42524c7ee4af
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Contact
@@ -49,17 +45,11 @@ function Header() {
             </Link>
           </nav>
           <div>
-<<<<<<< HEAD
-            <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
-              <Link to="/Enrollment">Enroll Now</Link>
-            </button>
-=======
-            <Link to="enrollment">
+            <Link to="/Enrollment">
               <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
                 Enroll Now
               </button>
             </Link>
->>>>>>> 81e51a3cc76d27c5f9f34e25625a42524c7ee4af
           </div>
         </div>
 
@@ -97,10 +87,10 @@ function Header() {
         } md:hidden absolute top-full left-0 w-full bg-primary-500  z-50 text-center `}
       >
         <div className="px-5 py-2 text-white">
-          <a href="/#programs" className="block  hover:bg-primary-700 py-3">
+          <a href="/programs" className="block  hover:bg-primary-700 py-3">
             Programs
           </a>
-          <a href="/#testimonial" className="block hover:bg-primary-700 py-3">
+          <a href="/testimonial" className="block hover:bg-primary-700 py-3">
             Testimonial
           </a>
           <Link to="/contact" className="block  hover:bg-primary-700 py-3">
@@ -110,17 +100,11 @@ function Header() {
             HireTalent
           </Link>
         </div>
-<<<<<<< HEAD
-        <button className="bg-primary-200 hover:bg-primary-300 text-primary-50 my-10 px-3 py-2 rounded-md text-sm font-medium mt-2 w-[78%]">
-          <Link to="/Enrollment">Enroll Now</Link>
-        </button>
-=======
         <Link to="/enrollment">
           <button className="bg-primary-300 hover:bg-primary-700 text-white my-10 px-3 py-2 rounded-md text-sm font-medium mt-2 w-[78%]">
             Enroll Now
           </button>
         </Link>
->>>>>>> 81e51a3cc76d27c5f9f34e25625a42524c7ee4af
       </nav>
     </header>
   );
