@@ -1,4 +1,4 @@
-import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
+import internPulseLogo from "../../assets/InternPulseLogo.svg";
 import resetPasswordImg from "../../assets/reset-password-img.svg";
 
 const ResetPassword = () => {

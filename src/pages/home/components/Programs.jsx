@@ -5,7 +5,7 @@ import Computer from "../../../assets/Computer.png";
 
 const Programs = () => {
   return (
-    <section className="bg-[#F7F7FC]   p-[3rem] md:p-[5rem]">
+    <section id="programs" className="bg-[#F7F7FC]   p-[3rem] md:p-[5rem]">
       <div className="text-center   ">
         <h2 className="text-2xl font-bold text-center ">Our Programs</h2>
         <p className="mb-8 mx-0 sm:mx-[8rem] text-center">
@@ -14,7 +14,7 @@ const Programs = () => {
           prior coding or design skills/knowledge.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4  lg:gap-4 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10  lg:gap-5 ">
         <div className="bg-white rounded-xl p-10 ] transition duration-300 transform hover:scale-90">
           <div className="mb-4">
             <img src={Computer} alt="" />
