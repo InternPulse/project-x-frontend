@@ -62,6 +62,15 @@ export default {
           30: "#FEFEFE",
         },
       },
+      keyframes: {
+        bounceCustom: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-13px)" }, // Adjust the vertical distance here
+        },
+      },
+      animation: {
+        "bounce-custom": "bounceCustom 2.5s infinite",
+      },
     },
   },
   plugins: [flowbitePlugin],

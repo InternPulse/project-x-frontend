@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "../../assets/InternPulse.png";
+import logo from "../../assets/internPulseLogo.png";
 
 const Loading = () => {
   return (
     <div className="grid place-items-center w-full h-screen">
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center w-[12%] ">
         <img
           src={logo}
           alt="logo"

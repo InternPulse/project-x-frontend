@@ -1,5 +1,5 @@
 import hireTalentImg from "../../assets/hire-talent-img.svg";
-import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
+import internPulseLogo from "../../assets/InternPulseLogo.svg";
 import dragIcon from "../../assets/drag-icon.svg";
 
 const HireTalent = () => {

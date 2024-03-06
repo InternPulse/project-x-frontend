@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LOGO from "../../assets/InternPulse.png";
+import LOGO from "../../assets/internPulseLogo.png";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -11,37 +11,55 @@ function Header() {
 
   return (
     <header className="bg-white  relative  border-b border-neutral-200  ">
-      <div className="max-w-7xl mx-6 h-[66px] flex justify-between items-center ">
+      <div className="max-w-7xl mx-7 h-[66px] flex justify-between items-center ">
         <div>
-          <a href="/" className="flex items-center h-full">
-            <img src={LOGO} alt="Logo" className="h-9 w-auto" />
-          </a>
+          <Link to="/" className="flex items-center h-[80%] w-[100%]">
+            <img src={LOGO} alt="Logo" className="h-8 w-auto" />
+          </Link>
         </div>
         <div className="hidden md:flex items-center  space-x-4">
           <nav className="flex-shrink mr-14">
             <a
-              href="#"
+              href="/#testimonial"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Testimonial
             </a>
             <a
+<<<<<<< HEAD
               href="/Contact"
+=======
+              href="/#programs"
+              className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Programs
+            </a>
+            <Link
+              to="/contact"
+>>>>>>> 81e51a3cc76d27c5f9f34e25625a42524c7ee4af
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Contact
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/HireTalent"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Hire Talent
-            </a>
+            </Link>
           </nav>
           <div>
+<<<<<<< HEAD
             <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
               <Link to="/Enrollment">Enroll Now</Link>
             </button>
+=======
+            <Link to="enrollment">
+              <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
+                Enroll Now
+              </button>
+            </Link>
+>>>>>>> 81e51a3cc76d27c5f9f34e25625a42524c7ee4af
           </div>
         </div>
 
@@ -76,25 +94,33 @@ function Header() {
       <nav
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-full left-0 w-full bg-primary-500  text-center `}
+        } md:hidden absolute top-full left-0 w-full bg-primary-500  z-50 text-center `}
       >
-        <div className="px-5 py-2 text-primary-100">
-          <a href="#" className="block  hover:text-primary-200 py-3">
+        <div className="px-5 py-2 text-white">
+          <a href="/#programs" className="block  hover:bg-primary-700 py-3">
             Programs
           </a>
-          <a href="#" className="block hover:text-primary-200 py-3">
+          <a href="/#testimonial" className="block hover:bg-primary-700 py-3">
             Testimonial
           </a>
-          <a href="#" className="block  hover:text-primary-200 py-3">
+          <Link to="/contact" className="block  hover:bg-primary-700 py-3">
             Contact
-          </a>
-          <a href="#" className="block hover:text-primary-200 py-3">
-            Hire Talent
-          </a>
+          </Link>
+          <Link to="/HireTalent" className="block hover:bg-primary-700 py-3">
+            HireTalent
+          </Link>
         </div>
+<<<<<<< HEAD
         <button className="bg-primary-200 hover:bg-primary-300 text-primary-50 my-10 px-3 py-2 rounded-md text-sm font-medium mt-2 w-[78%]">
           <Link to="/Enrollment">Enroll Now</Link>
         </button>
+=======
+        <Link to="/enrollment">
+          <button className="bg-primary-300 hover:bg-primary-700 text-white my-10 px-3 py-2 rounded-md text-sm font-medium mt-2 w-[78%]">
+            Enroll Now
+          </button>
+        </Link>
+>>>>>>> 81e51a3cc76d27c5f9f34e25625a42524c7ee4af
       </nav>
     </header>
   );

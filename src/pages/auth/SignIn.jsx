@@ -1,5 +1,5 @@
 import signInImage from "../../assets/Rectangle 39.svg";
-import internPulseLogo from "../../assets/InternPulse logo 32px.svg";
+import internPulseLogo from "../../assets/InternPulseLogo.svg";
 // import eyeOpenImage from "../assets/eye-image.svg";
 import { Link } from "react-router-dom";
 
