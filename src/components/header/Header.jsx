@@ -26,7 +26,7 @@ function Header() {
               Testimonial
             </a>
             <a
-              href="#"
+              href="/Contact"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Contact
@@ -40,10 +40,12 @@ function Header() {
           </nav>
           <div>
             <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
-              Enroll Now
+              <Link to="/Enrollment">Enroll Now</Link>
             </button>
           </div>
         </div>
+
+        {/* MOBILENavbar*/}
         <div className="md:hidden">
           <button
             type="button"
@@ -91,7 +93,7 @@ function Header() {
           </a>
         </div>
         <button className="bg-primary-200 hover:bg-primary-300 text-primary-50 my-10 px-3 py-2 rounded-md text-sm font-medium mt-2 w-[78%]">
-          Enroll Now
+          <Link to="/Enrollment">Enroll Now</Link>
         </button>
       </nav>
     </header>
