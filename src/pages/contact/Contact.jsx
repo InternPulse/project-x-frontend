@@ -12,7 +12,7 @@ import Layout from "../../components/layout/Layout";
 const Contact = () => {
   return (
     <Layout>
-      <div>
+      <div className="lg:max-w-[1200px] pl-[24px] pr-[24px] mx-auto mb-[160px]">
         <div className=" flex justify-between flex-col-reverse lg:flex-row">
           <div className="bg-[#2967BC] mt-[46px] mx-[auto] w-[326px] lg:w-[573px] h-[246px] lg:h-[684px] flex justify-center flex-col lg:px-[107px] px-[73px] gap-[24.5px] text-white rounded-[10px]">
             <div className=" flex gap-[15.5px]">
