@@ -7,129 +7,102 @@ function AccordionC() {
     <Accordion collapseAll>
       <Accordion.Panel>
         <Accordion.Title>
-          Lorem ipsum dolor sit amet consectetur.Lorem ipsum dolor sit amet
-          consectetur?
+          What is InternPulse Internship all about?
         </Accordion.Title>
         <Accordion.Content>
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is an open-source library of interactive components built
-            on top of Tailwind CSS including buttons, dropdowns, modals,
-            navbars, and more.
-          </p>
-          <p className="text-gray-500 dark:text-gray-400">
-            Check out this guide to learn how to&nbsp;
-            <a
-              href="https://flowbite.com/docs/getting-started/introduction/"
-              className="text-cyan-600 hover:underline dark:text-cyan-500"
-            >
-              get started&nbsp;
-            </a>
-            and start developing websites even faster with components on top of
-            Tailwind CSS.
-          </p>
-        </Accordion.Content>
-      </Accordion.Panel>
-      <Accordion.Panel>
-        <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-        <Accordion.Content>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is first conceptualized and designed using the Figma
-            software so everything you see in the library has a design
-            equivalent in our Figma file.
-          </p>
-          <p className="text-gray-500 dark:text-gray-400">
-            Check out the
-            <a
-              href="https://flowbite.com/figma/"
-              className="text-cyan-600 hover:underline dark:text-cyan-500"
-            >
-              Figma design system
-            </a>
-            based on the utility classes from Tailwind CSS and components from
-            Flowbite.
-          </p>
-        </Accordion.Content>
-      </Accordion.Panel>
-      <Accordion.Panel>
-        <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-        <Accordion.Content>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is first conceptualized and designed using the Figma
-            software so everything you see in the library has a design
-            equivalent in our Figma file.
-          </p>
-          <p className="text-gray-500 dark:text-gray-400">
-            Check out the
-            <a
-              href="https://flowbite.com/figma/"
-              className="text-cyan-600 hover:underline dark:text-cyan-500"
-            >
-              Figma design system
-            </a>
-            based on the utility classes from Tailwind CSS and components from
-            Flowbite.
-          </p>
-        </Accordion.Content>
-      </Accordion.Panel>
-      <Accordion.Panel>
-        <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-        <Accordion.Content>
-          <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is first conceptualized and designed using the Figma
-            software so everything you see in the library has a design
-            equivalent in our Figma file.
-          </p>
-          <p className="text-gray-500 dark:text-gray-400">
-            Check out the
-            <a
-              href="https://flowbite.com/figma/"
-              className="text-cyan-600 hover:underline dark:text-cyan-500"
-            >
-              Figma design system
-            </a>
-            based on the utility classes from Tailwind CSS and components from
-            Flowbite.
+            InternPulse helps people gather evidence of skills, learn how to
+            work in teams, deal with pressure, quickly expand their knowledge,
+            and network effectively. This prepares them to secure their first
+            job or opportunity in the tech industry.
           </p>
         </Accordion.Content>
       </Accordion.Panel>
       <Accordion.Panel>
         <Accordion.Title>
-          What are the differences between Flowbite and Tailwind UI?
+          What Benefits can I get from the InternPulse internship?
         </Accordion.Title>
         <Accordion.Content>
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            The main difference is that the core components from Flowbite are
-            open source under the MIT license, whereas Tailwind UI is a paid
-            product. Another difference is that Flowbite relies on smaller and
-            standalone components, whereas Tailwind UI offers sections of pages.
+            Benefits upon completion includes access to our exclusive talent
+            network, access to job opportunities, Linkedin profile optimisation,
+            resume and cover letter review, certificate of completion, letter of
+            recommendation, and listing on our public alumni page.
           </p>
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>When will the internship start?</Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-gray-500 dark:text-gray-400">April 2024</p>
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>How long does the internship last?</Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-gray-500 dark:text-gray-400">About 8 weeks</p>
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>
+          Will I be employed upon completion of the internship?
+        </Accordion.Title>
+        <Accordion.Content>
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            However, we actually recommend using both Flowbite, Flowbite Pro,
-            and even Tailwind UI as there is no technical reason stopping you
-            from using the best of two worlds.
+            You will be added to our exclusive talent network, and recommended
+            to potential employers.
           </p>
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>How often do we build new projects?</Accordion.Title>
+        <Accordion.Content>
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Learn more about these technologies:
+            Every week new projects are assigned to interns as tasks to complete
+            and present to be promoted to the next sprint.
           </p>
-          <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
-            <li>
-              <a
-                href="https://flowbite.com/pro/"
-                className="text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Flowbite Pro
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>
+          Do you accept payment via PayStack, Selar, PayPal, Crypto or Bank
+          Transfer?
+        </Accordion.Title>
+        <Accordion.Content>
+          <p className="mb-2 text-gray-500 dark:text-gray-400">
+            Yes, we do! Kindly chat with our team for payment details.
+          </p>
+        </Accordion.Content>
+      </Accordion.Panel>
+      <Accordion.Panel>
+        <Accordion.Title>Who is the founder?</Accordion.Title>
+        <Accordion.Content>
+          <img src="" alt="" />
+          <p className="mb-8">
+            Hi, I’m John Diginee, a Software Engineer with 7+ years of
+            experience working professionally with web and cloud technologies.
+          </p>
+          <p className="mb-8">
+            Passionate about using web technologies to build amazing products
+            and focusing on solving problems for different industries.
+          </p>
+          <p className="mb-8">
+            <strong>Skills & Technologies:</strong> Python (Django), JavaScript
+            (Vue), MySQL, Postgres, Redis, Docker, Kubernetes, Github Action,
+            Jenkins, AWS CodePipeline, Agile, Scrum, AWS, PHP
+            (WordPress/Elementor), Web Scraping.
+          </p>
+          <div>
+            <p>
+              <span className="flex-grow">
+                Didn’t find the answer you were looking for ? {"  "}
+              </span>
+
+              <a href="/" className="text-primary-500 hover:underline">
+                Click Here To Chat With Our Team.
               </a>
-            </li>
-            <li>
-              <a
-                href="https://tailwindui.com/"
-                rel="nofollow"
-                className="text-cyan-600 hover:underline dark:text-cyan-500"
-              >
-                Tailwind UI
-              </a>
-            </li>
-          </ul>
+            </p>
+          </div>
         </Accordion.Content>
       </Accordion.Panel>
     </Accordion>
