@@ -2,43 +2,37 @@
 
 import Man from "../../../assets/Man.png";
 import PrettyLady from "../../../assets/PrettyLady.png";
+import QuoteEnd from "../../../assets/QuoteEnd.png";
+import QuoteStart from "../../../assets/QuoteStart.png";
 
 import { Carousel } from "flowbite-react";
 
 function Slider() {
   return (
-    <div className="h-56 sm:h-[20rem] xl:h-80 2xl:h-[35rem]">
+    <div className="h-[35rem] sm:h-[23rem] xl:h-80 2xl:h-[35rem]">
       <Carousel>
-        <div className="flex flex-col  h-full  items-center  gap-5 justify-start bg-neutral-100 dark:bg-gray-700 dark:text-white ">
-          <div className="border  border-white h-[70px] w-[70px] rounded-[100%] bg-white mt-2">
+        <div className="flex flex-col h-full items-center w-[100%] gap-5 justify-start dark:bg-gray-700 dark:text-white relative">
+          <div className="border border-white h-[75px] w-[75px] rounded-[100%] bg-primary-900 mt-2 mb-[-4px]">
             <img src={PrettyLady} alt="" className="w-[100%] h-[100%]" />
           </div>
-          <div>
-            <p className="text-center mx-5 md:mx-20 ">
-              "spLorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              natus laboriosam beatae quia quas accusantium temporibus harum
-              molestiae dicta autem ullam dolorem, iste porro et aliquid hic
-              alias nihil sint."Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Laborum inventore nam cum est, laudantium
-              incidunt obcaecati assumenda iure doloribus eum aperiam fugit quas
-              voluptas eligendi corporis voluptatibus? Voluptas fugiat delectus,
-              libero, dolore quaerat natus fuga at aut minima, molestias
-              inventore!
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col h-full  items-center gap-5 justify-start bg-neutral-100 dark:bg-gray-700 dark:text-white ">
-          <div className="border  border-white h-[70px] w-[70px] rounded-[100%] bg-white mt-2">
-            <img src={Man} alt="" className="w-[100%] h-[100%]" />
-          </div>
-          <div>
-            <p className="text-center mx-5 md:mx-20">
-              "spLorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              natus laboriosam beatae quia quas accusantium temporibus harum
-              molestiae dicta autem ullam dolorem, iste porro et aliquid hic
-              alias nihil sint."
-            </p>
+          <div className="mx-2 md:mx-40 flex flex-col items-center justify-center relative">
+            <h3>Jane Doe</h3>
+            <p>2022 Product Management track</p>
+            <div className="flex items-start justify-start relative">
+              <img src={QuoteStart} alt="" className="w-[10px] sm:w-[20px] " />
+              <p className="text-center mx-4 md:mx-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                natus laboriosam beatae quia quas accusantium temporibus harum
+                molestiae dicta autem ullam dolorem, iste porro et aliquid hic
+                alias nihil sint." Lorem ipsum dolor, sit amet consectetur
+                adipisicing elit. Laborum inventore nam cum est, laudantium
+              </p>
+              <img
+                src={QuoteEnd}
+                alt=""
+                className="w-[10px] sm:w-[20px] absolute bottom-2 sm:bottom-1 right-8 sm:right-4 mb-1 mr-0"
+              />
+            </div>
           </div>
         </div>
       </Carousel>
