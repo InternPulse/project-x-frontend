@@ -13,9 +13,17 @@ const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
 const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
 const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
+const PaymentGateway = lazy(() =>
+  import("./pages/paymentGateway/PaymentGateway")
+);
+const OrderConfirmation = lazy(() =>
+  import("./pages/OrderConfirmation/OrderConfirmation")
+);
 
+const PaymentOptions = lazy(() =>
+  import("./pages/paymentOptions/PaymentOptions")
+);
 import "cal-sans";
-import PaymentOptions from "./pages/paymentOptions/PaymentOptions";
 
 const App = () => {
   return (
@@ -32,7 +40,9 @@ const App = () => {
           <Route path="/HireTalent" element={<HireTalent />} />
           <Route path="/Enrollment" element={<Enrollment />} />
           <Route path="/payment-options" element={<PaymentOptions />} />
+          <Route path="/payments" element={<PaymentGateway />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="*" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>

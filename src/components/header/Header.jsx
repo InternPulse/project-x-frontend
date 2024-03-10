@@ -19,14 +19,14 @@ function Header() {
         </div>
         <div className="hidden md:flex items-center  space-x-4 ">
           <nav className="flex-shrink mr-14 ">
-            <as
+            <a
               href="/#testimonial"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Testimonial
             </as>
             <a
-              href="/#programs"
+              href="#"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Programs
@@ -52,6 +52,8 @@ function Header() {
             </button>
           </Link>
         </div>
+
+        {/* MOBILENavbar*/}
         <div className="md:hidden">
           <button
             type="button"
@@ -85,10 +87,10 @@ function Header() {
         } md:hidden absolute top-full left-0 w-full bg-primary-500  z-50 text-center `}
       >
         <div className="px-5 py-2 text-white">
-          <a href="/#programs" className="block  hover:bg-primary-700 py-3">
+          <a href="/programs" className="block  hover:bg-primary-700 py-3">
             Programs
           </a>
-          <a href="/#testimonial" className="block hover:bg-primary-700 py-3">
+          <a href="/testimonial" className="block hover:bg-primary-700 py-3">
             Testimonial
           </a>
           <Link to="/contact" className="block  hover:bg-primary-700 py-3">
