@@ -12,19 +12,19 @@ function Header() {
   return (
     <header className="bg-white  relative  border-b border-neutral-200  ">
       <div className="max-w-7xl mx-7 h-[66px] flex justify-between items-center ">
-        <div>
-          <Link to="/" className="flex items-center h-[80%] w-[100%]">
+        <div className="ml-[0rem] lg:ml-[6.5rem]">
+          <Link to="/" className="flex items-center ">
             <img src={LOGO} alt="Logo" className="h-8 w-auto" />
           </Link>
         </div>
-        <div className="hidden md:flex items-center  space-x-4">
-          <nav className="flex-shrink mr-14">
-            <a
+        <div className="hidden md:flex items-center  space-x-4 ">
+          <nav className="flex-shrink mr-14 ">
+            <as
               href="/#testimonial"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
             >
               Testimonial
-            </a>
+            </as>
             <a
               href="/#programs"
               className="text-gray-600 hover:text-primary-500 px-3 py-2 rounded-md text-sm font-medium"
@@ -44,13 +44,13 @@ function Header() {
               Hire Talent
             </Link>
           </nav>
-          <div>
-            <Link to="enrollment">
-              <button className="bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 rounded-xl text-sm font-medium">
-                Enroll Now
-              </button>
-            </Link>
-          </div>
+        </div>
+        <div>
+          <Link to="enrollment ">
+            <button className="hidden md:flex bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 mr-5 rounded-xl text-sm font-medium">
+              Enroll Now
+            </button>
+          </Link>
         </div>
         <div className="md:hidden">
           <button
