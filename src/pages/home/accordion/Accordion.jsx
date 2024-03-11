@@ -4,11 +4,11 @@ function AccordionItem({ title, content, isOpen, toggleAccordion }) {
   return (
     <div>
       <div
-        className="accordion-header flex justify-between items-center cursor-pointer border-b-[1.5px] border-primary-500 p-4"
+        className="accordion-header flex justify-between items-center cursor-pointer border-b-[1.5px] border-primary-200 p-4"
         onClick={toggleAccordion}
       >
         <div className=" text-xl">{title}</div>
-        <div className="rounded-full border border-primary-500 w-8 h-8 flex items-center justify-center ">
+        <div className="rounded-full border border-primary-700 w-8 h-8 flex items-center justify-center ">
           <span className="text-primary-700 m-3">{isOpen ? "-" : "+"}</span>
         </div>
       </div>
