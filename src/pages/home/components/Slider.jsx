@@ -20,7 +20,7 @@ function Slider() {
             <p>2022 Product Management track</p>
             <div className="flex items-start justify-start relative">
               <img src={QuoteStart} alt="" className="w-[10px] sm:w-[20px] " />
-              <p className="text-center mx-4 md:mx-5">
+              <p className="text-center   pl-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
                 natus laboriosam beatae quia quas accusantium temporibus harum
                 molestiae dicta autem ullam dolorem, iste porro et aliquid hic
@@ -30,7 +30,7 @@ function Slider() {
               <img
                 src={QuoteEnd}
                 alt=""
-                className="w-[10px] sm:w-[20px] absolute bottom-2 sm:bottom-1 right-8 sm:right-4 mb-1 mr-0"
+                className="w-[10px] sm:w-[20px] absolute bottom-2 sm:bottom-1 right-10 sm:right-[-3rem] mb-1 mr-0"
               />
             </div>
           </div>

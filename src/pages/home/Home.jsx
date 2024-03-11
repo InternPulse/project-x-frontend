@@ -77,7 +77,7 @@ const Home = () => {
             <img
               src={JaneDoe}
               alt=""
-              className="sm:w-[170px] w-[130px] absolute top-[-1rem] sm:top-[-3rem] right-[3.1rem] sm:right-[4.4rem]"
+              className="sm:w-[170px] w-[160px] absolute top-[-2.7rem] sm:top-[-3rem] right-[1.9rem] sm:right-[4.4rem]"
             />
 
             <div className="absolute bg-neutral-50 rounded-[4px] h-[255px] top-[20px] left-[5px] w-[170px] sm:w-[230px]  z-50">
@@ -93,7 +93,7 @@ const Home = () => {
               <img
                 src={JaneDoe}
                 alt=""
-                className="w-[130px] md:w-[170px] absolute bottom-[-3.5rem] right-[10rem] md:right-[13rem] z-50"
+                className="w-[160px] md:w-[170px] absolute bottom-[-3rem] right-[9rem] md:right-[13rem] z-50"
               />
               <div className="absolute top-[7px] left-[20px] sm:left-[25px] rounded-tr-[60px] bg-accent-200 h-[150px] sm:h-[170px] w-[130px] sm:w-[150px] z-50">
                 <img
