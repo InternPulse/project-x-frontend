@@ -1,12 +1,15 @@
 import HeroImage from "../../assets/HeroImage.png";
-import Man from "../../assets/Man.png";
-import PrettyLady from "../../assets/PrettyLady.png";
-import ExcitedMan from "../../assets/ExcitedMan.png";
+import Man from "../../assets/man-home.svg";
+import PrettyLady from "../../assets/prettyLady.svg";
+import ExcitedMan from "../../assets/excitedMan.svg";
 import Curve from "../../assets/Curve.png";
 import Skills from "./components/Skills";
 import Programs from "./components/Programs";
 import Slider from "./components/Slider";
-import AccordionC from "./components/AccordionC";
+import AccordionData from "./accordion/AccordionData";
+import InternFrame from "../../assets/InternFrame.svg";
+import JaneDoe from "../../assets/JaneDoe.svg";
+
 import Layout from "../../components/layout/Layout";
 import { Link } from "react-router-dom";
 
@@ -14,7 +17,7 @@ const Home = () => {
   return (
     <Layout>
       <div className="max-w-[1440px] ">
-        <section className="flex flex-col lg:flex-row  gap-10 justify-between  sm:min-h-[80%]  h-[650px]   lg:mb-[4rem] mb-[-12rem] px-[1rem] sm:px-[8rem]  ">
+        <section className="flex flex-col lg:flex-row  gap-10 justify-between  sm:min-h-[80%]  h-[650px]   lg:mb-[4rem] mb-[-10rem] px-[1rem] sm:px-[8rem]  ">
           <div className="relative md:mt-[80px] flex flex-col items-center lg:items-start mt-[50px] lg:w-[480px] min-h-[204px] ">
             <div className="text-center lg:text-left ">
               <h2 className="text-4xl font-bold mb-8 leading-[1.3]">
@@ -55,7 +58,7 @@ const Home = () => {
             />
           </div>
         </section>
-        <section className=" flex gap-[50px] flex-col justify-between items-center  lg:flex-row     p-[3rem] md:p-[5rem]">
+        <section className=" flex gap-[4rem] flex-col justify-center items-center  lg:flex-row   p-[3rem] md:p-[5rem]">
           <div className="lg:w-[483px]  text-center lg:text-left">
             <h2 className="text-2xl font-bold mb-8">
               The Hard Truth: Degrees and courses alone won’t cut it!
@@ -70,34 +73,54 @@ const Home = () => {
               business problems.
             </p>
           </div>
-          <div className=" relative bg-blue-50 h-[340px] w-[375px] sm:w-[425px] lg:w-[450px]">
-            <div className="absolute left-[0px] md:left-[22px] top-[80px]  rounded-tr-[7.5rem]  rounded-tl-[7.5rem] bg-accent-200 p-4 h-[250px] w-[220px] ">
-              <img
-                src={PrettyLady}
-                alt=""
-                className="absolute bottom-[15px] right-[0px] "
-              />
+          <div className="flex justify-center  w-[21rem] sm:w-[30rem] h-[20rem] relative">
+            <img
+              src={JaneDoe}
+              alt=""
+              className="sm:w-[170px] w-[160px] absolute top-[-2.7rem] sm:top-[-3rem] right-[1.9rem] sm:right-[4.4rem]"
+            />
+
+            <div className="absolute bg-neutral-50 rounded-[4px] h-[255px] top-[20px] left-[5px] w-[170px] sm:w-[230px]  z-50">
+              <div className="absolute left-[24px] sm:left-[52px] top-[50px]  rounded-tr-[3.8rem]  rounded-tl-[3.8rem] bg-accent-200 p-2 h-[165px] sm:h-[185px] w-[138px] sm:w-[160px] z-50">
+                <img
+                  src={PrettyLady}
+                  alt=""
+                  className="absolute bottom-[15px] left-[-7px] "
+                />
+              </div>
             </div>
-            <div className="absolute top-[0px] left-[213px] md:left-[237px] rounded-tr-[5rem] bg-accent-200  h-[200px] w-[162px] sm:w-[170px]">
+            <div className="absolute bg-neutral-50 rounded-[4px] h-[260px] w-[175px] sm:w-[220px] right-[20px]  sm:right-[68px]">
               <img
-                src={Man}
+                src={JaneDoe}
                 alt=""
-                className="absolute bottom-[14px] right-[18px] h-[100%] w-[100%]"
+                className="w-[160px] md:w-[170px] absolute bottom-[-3rem] right-[9rem] md:right-[13rem] z-50"
               />
+              <div className="absolute top-[7px] left-[20px] sm:left-[25px] rounded-tr-[60px] bg-accent-200 h-[150px] sm:h-[170px] w-[130px] sm:w-[150px] z-50">
+                <img
+                  src={Man}
+                  alt=""
+                  className="absolute left-[-15px] sm:left-[-20px] bottom-[-2px] h-fit w-[100%]    "
+                />
+              </div>
             </div>
           </div>
         </section>
         <Skills />
 
-        <section className="relative flex flex-col md:flex-row items-center justify-between gap-[6rem]    p-[3rem] md:p-[5rem] ">
-          <div className="relative w-[90%]  sm:w-[300px] md:w-[400px] h-[185px] lg:h-[400px] mt-[8rem] sm:mt-[50px] rounded-tr-[14rem] rounded-tl-[14rem] rounded-b-[12rem] bg-primary-300">
+        <section className="relative flex flex-col md:flex-row items-center justify-center gap-[4rem]    p-[1rem] md:p-[5rem] ">
+          <div className="  relative ">
             <img
               src={ExcitedMan}
               alt="Excited Young Man"
-              className="w-full   object-center absolute bottom-[10px] sm:bottom-[40px] left-[20px] lg:left-[40px]"
+              className=" w-[500px]"
+            />
+            <img
+              className="absolute lg:right-[-3.5rem] right-[1rem]  lg:bottom-12  bottom-[-1rem]  w-[70%] md:w-[50%]"
+              src={InternFrame}
+              alt=""
             />
           </div>
-          <div className="text-center md:text-left lg:w-[483px]  lg:text-left  ">
+          <div className="text-center md:text-left lg:w-[483px] pb-[3rem]  lg:text-left  ">
             <h2 className="text-xl md:text-2xl font-bold mb-8">
               Become the Tech Talent Recruiters and Employers seek!
             </h2>
@@ -122,7 +145,7 @@ const Home = () => {
         <section className="   p-[3rem] md:p-[5rem] ">
           <div className="text-center   ">
             <h2 className="text-2xl font-bold text-center mb-8">
-              Frequently Asked Questions
+              Secure your spot today
             </h2>
             <p className="mb-12 ">
               Join our program and embark on a journey to unlock new
@@ -166,7 +189,7 @@ const Home = () => {
         </section>
         <section
           id="testimonial"
-          className="  bg-neutral-50 p-[3rem] md:p-[5rem]"
+          className="  bg-neutral-50 px-[3rem] md:px-[5rem] py-[1.5rem]"
         >
           <div className="text-center mb-[2rem] sm:mb-8  ">
             <h2 className="text-2xl font-bold text-center ">
@@ -176,11 +199,11 @@ const Home = () => {
           </div>
           <Slider />
         </section>
-        <section className=" p-[3rem] md:p-[5rem]">
+        <section className=" p-[3rem] md:p-[12rem]">
           <h2 className="text-2xl font-bold text-center mb-8">
             Frequently Asked Questions
           </h2>
-          <AccordionC />
+          <AccordionData />
         </section>
       </div>
     </Layout>

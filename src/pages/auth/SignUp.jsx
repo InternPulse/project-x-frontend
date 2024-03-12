@@ -1,5 +1,5 @@
 import internPulseLogo from "../../assets/InternPulseLogo.svg";
-import signUpImg from "../../assets/sign-up-image.svg";
+import signUpImg from "../../assets/sign-up-image.png";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
@@ -9,9 +9,9 @@ const SignUp = () => {
         <img className="h-full w-full object-cover" src={signUpImg} alt="" />
       </div>
       <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll  bg-neutral-30 md:bg-inherit lg:bg-inherit">
-        <div className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white">
+        <Link to={'/'} className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white">
           <img src={internPulseLogo} alt="Intern Pulse Logo" />
-        </div>
+        </Link>
         <div className="px-6 w-full">
           <div className="w-full mx-auto lg:w-546">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">

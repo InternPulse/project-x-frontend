@@ -16,9 +16,14 @@ const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const PaymentGateway = lazy(() =>
   import("./pages/paymentGateway/PaymentGateway")
 );
+const OrderConfirmation = lazy(() =>
+  import("./pages/OrderConfirmation/OrderConfirmation")
+);
 
+const PaymentOptions = lazy(() =>
+  import("./pages/paymentOptions/PaymentOptions")
+);
 import "cal-sans";
-import PaymentOptions from "./pages/paymentOptions/PaymentOptions";
 
 const App = () => {
   return (
@@ -37,6 +42,7 @@ const App = () => {
           <Route path="/payment-options" element={<PaymentOptions />} />
           <Route path="/payments" element={<PaymentGateway />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="*" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>

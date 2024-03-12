@@ -97,6 +97,22 @@ const HireTalent = () => {
                 <div className="flex flex-col">
                   <label
                     style={{ marginBottom: "14px" }}
+                    htmlFor="jobPosition"
+                    className="font-bold"
+                  >
+                    Job Position
+                  </label>
+                  <input
+                    className="rounded-md p-3"
+                    type="text"
+                    name="jobPosition"
+                    id="jobPosition"
+                    placeholder="Frontend developer"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label
+                    style={{ marginBottom: "14px" }}
                     htmlFor="salariesIncentives"
                     className="font-bold"
                   >
@@ -110,17 +126,23 @@ const HireTalent = () => {
                     rows="5"
                   ></textarea>
                 </div>
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                   <label
                     style={{ marginBottom: "14px" }}
-                    htmlFor="salariesIncentives"
+                    htmlFor="jobRequirement"
                     className="font-bold"
                   >
                     Upload Job Requirement document
                     <span className="text-neutral-400"> (Optional)</span>
                   </label>
-
-                  <div
+                  <input
+                    type="file"
+                    name="jobRequirement"
+                    id="jobRequirement"
+                    className="rounded-md border border-dashed border-black p-8"
+                  />
+                  <input
+                    type="file"
                     className="rounded-md border border-dashed border-black p-8"
                     id="salariesIncentives"
                   >
@@ -134,8 +156,8 @@ const HireTalent = () => {
                     <p className="text-neutral-500 mt-2">
                       Allowed Type(s): .pdf, .doc. .docx, . docx, .png
                     </p>
-                  </div>
-                </div>
+                  </input>
+                </div> */}
               </div>
               <button className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-4 hover:bg-primary-700 mt-[40px] lg:mt-[50px]">
                 Submit
