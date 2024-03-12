@@ -9,11 +9,13 @@ const SignUp = lazy(() => import("./pages/auth/SignUp"));
 const Enrollment = lazy(() => import("./pages/enrollment"));
 const Welcome = lazy(() => import("./pages/welcome/Welcome"));
 const HireTalent = lazy(() => import("./pages/HireTalent/HireTalent"));
-const Dashboard = lazy(() => import("./pages/dashboard/Dashboard"));
+const Dashboard = lazy(() => import("./pages/dashboard/Index"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
 const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
-const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"))
-const PaymentGateway = lazy(()=> import("./pages/paymentGateway/PaymentGateway"))
+const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
+const PaymentGateway = lazy(() =>
+  import("./pages/paymentGateway/PaymentGateway")
+);
 
 import "cal-sans";
 import PaymentOptions from "./pages/paymentOptions/PaymentOptions";
