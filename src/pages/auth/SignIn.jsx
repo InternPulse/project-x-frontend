@@ -10,7 +10,10 @@ const SignIn = () => {
         <img className="h-full w-full object-cover" src={signInImage} alt="" />
       </div>
       <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll  bg-neutral-30 md:bg-inherit lg:bg-inherit">
-        <Link to={'/'} className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white">
+        <Link
+          to={"/"}
+          className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white"
+        >
           <img src={internPulseLogo} alt="Intern Pulse Logo" />
         </Link>
         <div className="px-6 w-full">
@@ -72,7 +75,9 @@ const SignIn = () => {
                 <span className="text-neutral-700 font-normal">
                   Forgot Password?
                 </span>
-                <span className="font-semibold"> Reset Password</span>
+                <Link to={"/forgot-password"} className="font-semibold ml-1">
+                  Reset Password
+                </Link>
               </p>
             </div>
           </div>
