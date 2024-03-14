@@ -9,8 +9,8 @@ export default function Sidebar() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen w-[80px] relative bg-[#E6EEFA] ">
-      <nav className="h-full fixed mx-[16px] ">
+    <div className="min-h-screen w-[100px] relative bg-[#E6EEFA] ">
+      <nav className="h-full fixed px-[16px] ">
         <div className="pb-10 sm:w-[45%] ">
           <img src={internPulseLogo} alt="Invoice Pulse" className="w-[100%]" />
         </div>
@@ -18,9 +18,9 @@ export default function Sidebar() {
           {data.map((nav, index) => (
             <div
               key={index}
-              className={`flex justify-center items-center cursor-pointer  align-middle  ${
+              className={`flex justify-center items-center cursor-pointer  align-middle ${
                 location.pathname === nav.url
-                  ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px] "
+                  ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px]"
                   : ""
               } w-[28px] h-[28px]`}
             >
@@ -28,7 +28,7 @@ export default function Sidebar() {
                 <img
                   src={nav.svg}
                   alt=""
-                  className="w-[100%] h-[100%] object-contain flex justify-center items-center "
+                  className="w-[100%] h-[100%] object-contain flex justify-center items-center"
                 />
               </Link>
             </div>
@@ -36,14 +36,22 @@ export default function Sidebar() {
         </div>
 
         <div
-          className={`flex absolute bottom-[100px] items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400] `}
+          className={`flex absolute bottom-[100px] items-center  justify-center   cursor-pointer font-Montserrat font-[400] ${
+            location.pathname === "/dashboard/slack"
+              ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px]"
+              : ""
+          } w-[28px] h-[28px]`}
         >
           <Link to="/dashboard/slack">
-            <img src={Slack} alt="" />
+            <img
+              src={Slack}
+              alt=""
+              className="w-[100%] h-[100%] object-contain flex justify-center items-center"
+            />
           </Link>
         </div>
         <div
-          className={`flex absolute   bottom-[30px]  items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400]  `}
+          className={`flex absolute bottom-[30px]  items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400]  `}
         >
           <Link to="/dashboard/slack">
             <img src={ProfileImage} alt="" className=" w-[60%]" />
