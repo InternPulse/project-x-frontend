@@ -31,21 +31,21 @@ const DashboardHome = () => {
       {/* Body */}
       <div className=" ml-[84px] w-[55%] mt-[18px]">
         <div className="bg-[#2967BC] pl-[67px] pr-[150px] pt-[25px] pb-[42px] text-white rounded-[25px]">
-          <p className=" text-3xl pb-[10px]">Welcome Back Daniel!</p>
+          <p className=" text-2xl pb-[10px]">Welcome Back Daniel!</p>
           <p className=" text-1xl">Role: Product Manager</p>
         </div>
         <div className=" mt-[18px] flex gap-[13px]">
-          <div className=" border border-solid border-gray-500 w-[140px] h-[140px] rounded-[7px] flex flex-col justify-between items-center py-[7px] ">
+          <div className=" border border-solid border-gray-300 w-[110px] h-[110px] rounded-[7px] flex flex-col justify-between items-center py-[7px] ">
             <img src={peers} className=" object-contain w-[30%]" />
             <p>Peers</p>
             <p>20</p>
           </div>
-          <div className=" border border-solid border-gray-500 w-[140px] h-[140px] rounded-[7px] flex flex-col justify-between items-center py-[7px] ">
+          <div className=" border border-solid border-gray-300 w-[110px] h-[110px] rounded-[7px] flex flex-col justify-between items-center py-[7px] ">
             <img src={stage} className=" object-contain w-[30%]" />
-            <p>Sttage</p>
+            <p>Stage</p>
             <p>0</p>
           </div>
-          <div className=" border border-solid border-gray-500 w-[140px] h-[140px] rounded-[7px] flex flex-col justify-between items-center py-[7px] ">
+          <div className=" border border-solid border-gray-300 w-[110px] h-[110px] rounded-[7px] flex flex-col justify-between items-center py-[7px] ">
             <img src={tasks} className=" object-contain w-[30%]" />
             <p>Task</p>
             <p>3</p>

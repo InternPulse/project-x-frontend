@@ -53,7 +53,7 @@ export default function Sidebar() {
         <div
           className={`flex absolute bottom-[30px]  items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400]  `}
         >
-          <Link to="/dashboard/slack">
+          <Link to="/dashboard/profile">
             <img src={ProfileImage} alt="" className=" w-[60%]" />
           </Link>
         </div>
