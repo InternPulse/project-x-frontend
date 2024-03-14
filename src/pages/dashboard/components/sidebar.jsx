@@ -21,7 +21,7 @@ export default function Sidebar() {
               className={`flex justify-center items-center cursor-pointer  align-middle ${
                 location.pathname === nav.url
                   ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px]"
-                  : ""
+                  : " px-[5px] py-[3px]"
               } w-[28px] h-[28px]`}
             >
               <Link to={nav.url}>
@@ -35,27 +35,29 @@ export default function Sidebar() {
           ))}
         </div>
 
-        <div
-          className={`flex absolute bottom-[100px] items-center  justify-center   cursor-pointer font-Montserrat font-[400] ${
-            location.pathname === "/dashboard/slack"
-              ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px]"
-              : ""
-          } w-[28px] h-[28px]`}
-        >
-          <Link to="/dashboard/slack">
-            <img
-              src={Slack}
-              alt=""
-              className="w-[100%] h-[100%] object-contain flex justify-center items-center"
-            />
-          </Link>
-        </div>
-        <div
-          className={`flex absolute bottom-[30px]  items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400]  `}
-        >
-          <Link to="/dashboard/profile">
-            <img src={ProfileImage} alt="" className=" w-[60%]" />
-          </Link>
+        <div className=" pl-[15px]">
+          <div
+            className={`flex absolute bottom-[100px] items-center  justify-center   cursor-pointer font-Montserrat font-[400] ${
+              location.pathname === "/dashboard/slack"
+                ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px]"
+                : "px-[5px] py-[3px]"
+            } w-[28px] h-[28px]`}
+          >
+            <Link to="/dashboard/slack">
+              <img
+                src={Slack}
+                alt=""
+                className="w-[100%] h-[100%] object-contain flex justify-center items-center"
+              />
+            </Link>
+          </div>
+          <div
+            className={`flex absolute bottom-[30px]  items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400]  `}
+          >
+            <Link to="/dashboard/profile">
+              <img src={ProfileImage} alt="" className=" w-[50%]" />
+            </Link>
+          </div>
         </div>
       </nav>
     </div>
