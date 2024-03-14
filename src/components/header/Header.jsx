@@ -47,7 +47,7 @@ function Header() {
           </nav>
         </div>
         <div>
-          <Link to="enrollment ">
+          <Link to="/enrollment ">
             <button className="hidden md:flex bg-primary-500 hover:bg-primary-700 text-white  py-2 px-4 mr-5 rounded-xl text-sm font-medium">
               Enroll Now
             </button>
@@ -101,7 +101,7 @@ function Header() {
             HireTalent
           </Link>
         </div>
-        <Link to="/enrollment">
+        <Link to="/Enrollment">
           <button className="bg-primary-300 hover:bg-primary-700 text-white my-10 px-3 py-2 rounded-md text-sm font-medium mt-2 w-[78%]">
             Enroll Now
           </button>
