@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import internPulseLogo from "../../../assets/Rectangle 58.png";
 import data from "../data/data";
+import Slack from "../../../assets/icons/slack.svg";
+import ProfileImage from "../../../assets/icons/profile-image.png";
 
 export default function Sidebar() {
   const location = useLocation();
@@ -16,24 +18,37 @@ export default function Sidebar() {
           {data.map((nav, index) => (
             <div
               key={index}
-              className={`flex justify-center items-center cursor-pointer align-middle p-[1px]  ${
-                location.pathname === nav.url ? "bg-black rounded-[3px]" : ""
+              className={`flex justify-center items-center cursor-pointer  align-middle  ${
+                location.pathname === nav.url
+                  ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px] "
+                  : ""
               } w-[28px] h-[28px]`}
             >
               <Link to={nav.url}>
                 <img
                   src={nav.svg}
                   alt=""
-                  className="w-[100%] h-[100%] object-contain"
+                  className="w-[100%] h-[100%] object-contain flex justify-center items-center "
                 />
               </Link>
             </div>
           ))}
         </div>
-        {/* <div className="flex absolute bottom-[30px] items-center mt-[420px] p-6 space-x-3 font-Montserrat font-[400]">
-          <img src={question} alt="" />
-          <Link to="/help">Help</Link>
-        </div> */}
+
+        <div
+          className={`flex absolute bottom-[100px] items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400] `}
+        >
+          <Link to="/dashboard/slack">
+            <img src={Slack} alt="" />
+          </Link>
+        </div>
+        <div
+          className={`flex absolute   bottom-[30px]  items-center  justify-center  px-[5px] py-[3px] cursor-pointer font-Montserrat font-[400]  `}
+        >
+          <Link to="/dashboard/slack">
+            <img src={ProfileImage} alt="" className=" w-[60%]" />
+          </Link>
+        </div>
       </nav>
     </div>
   );
