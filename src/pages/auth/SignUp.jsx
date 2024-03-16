@@ -1,12 +1,17 @@
 import internPulseLogo from "../../assets/InternPulseLogo.svg";
 import signUpImg from "../../assets/sign-up-image.png";
-import { Alert, Spinner } from "flowbite-react";
-import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
+import { Spinner } from "flowbite-react";
+import { useSignupMutation } from "../../slices/userApiSlice";
+import { setCredentials } from "../../slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const initialValues = {
@@ -14,45 +19,55 @@ const SignUp = () => {
     first_name: "",
     last_name: "",
     password: "",
-    agreement: false, // Add a field to track agreement checkbox
+    questionnaire_id: "",
   };
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is required"),
     first_name: Yup.string().required("First name is required"),
     last_name: Yup.string().required("Last name is required"),
-    password: Yup.string()
-      .required("Password is required")
-      .matches(
-        /^(?=.*[a-z])/,
-        "Password must contain at least one lowercase letter"
-      ),
-    agreement: Yup.boolean().oneOf(
-      [true],
-      "Please agree to terms and conditions"
-    ), // Validate agreement checkbox
+    password: Yup.string().required("Password is required"),
   });
 
-  const handleSubmit = async (values, { setSubmitting, setFieldError }) => {
+  const [signup, { isLoading }] = useSignupMutation();
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      toast.info("please complete your registratioin");
+      navigate("/profileform");
+    }
+  }, [navigate, userInfo]);
+
+  const handleSubmit = async (values) => {
+    const { email, first_name, last_name, password, questionnaire_id } = values;
     try {
-      const response = await axios.post(
-        "https://project-x-backend-lbglg.ondigitalocean.app/api/v1/signup",
-        values
-      );
-      if (response.status === 201) {
-        navigate("/signin");
-      }
-    } catch (error) {
-      if (error.response && error.response.data.errors) {
-        const errors = error.response.data.errors;
-        Object.keys(errors).forEach((fieldName) => {
-          setFieldError(fieldName, errors[fieldName][0]);
+      const res = await signup({
+        email,
+        first_name,
+        last_name,
+        password,
+      }).unwrap();
+      dispatch(setCredentials({ ...res }));
+      navigate("/home");
+    } catch (err) {
+      console.log(err);
+      if (err.status === "PARSING_ERROR") {
+        toast.error("An unexpected error occurred. Please try again later.");
+      } else if (err.status === 400 && err.data && err.data.errors) {
+        const validationErrors = Object.values(err.data.errors).flat();
+        validationErrors.forEach((error) => {
+          toast.error(error);
         });
       } else {
-        setFieldError("password", "An error occurred. Please try again later.");
+        console.log(err);
+        toast.error(
+          err?.data?.message ||
+            err.error ||
+            "An error occured. please try again "
+        );
       }
     }
-    setSubmitting(false);
   };
 
   return (
@@ -61,142 +76,143 @@ const SignUp = () => {
         <img className="h-full w-full " src={signUpImg} alt="" />
       </div>
       <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 o  bg-neutral-30 md:bg-inherit lg:bg-inherit">
-        <Link
-          to={"/"}
-          className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[64px] bg-white"
-        >
+        <div className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[64px] bg-white">
           <img src={internPulseLogo} alt="Intern Pulse Logo" />
-        </Link>
+        </div>
         <div className="px-6 w-full">
           <div className="w-full mx-auto lg:w-546">
             <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold">
               Sign up to InternPulse
             </h1>
+
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
-              onSubmit={handleSubmit}
+              onSubmit={(e) => handleSubmit(e)}
             >
-              {({ isSubmitting }) => (
-                <Form className="mt-[32px] lg:mt-[30px]" autoComplete="off">
-                  <div className="flex flex-col" style={{ gap: "30px" }}>
-                    <div className="flex flex-col">
-                      <label
-                        style={{ marginBottom: "8px" }}
-                        htmlFor="email"
-                        className="font-bold"
-                      >
-                        Enter Email Address
-                      </label>
-                      <Field
-                        className="rounded-md p-3 placeholder-gray-400"
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Joepaul@gmail.com"
-                      />
-                      <ErrorMessage
-                        name="email"
-                        component="p"
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <label
-                        style={{ marginBottom: "8px" }}
-                        htmlFor="first_name"
-                        className="font-bold"
-                      >
-                        First Name
-                      </label>
-                      <Field
-                        className="rounded-md p-3 placeholder-gray-400"
-                        type="text"
-                        name="first_name"
-                        id="first_name"
-                        placeholder="First Name"
-                      />
-                      <ErrorMessage
-                        name="first_name"
-                        component="p"
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <label
-                        style={{ marginBottom: "8px" }}
-                        htmlFor="last_name"
-                        className="font-bold"
-                      >
-                        Last Name
-                      </label>
-                      <Field
-                        className="rounded-md p-3 placeholder-gray-400"
-                        type="text"
-                        name="last_name"
-                        id="last_name"
-                        placeholder="Last Name"
-                      />
-                      <ErrorMessage
-                        name="last_name"
-                        component="p"
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <label
-                        style={{ marginBottom: "14px" }}
-                        htmlFor="password"
-                        className="font-bold"
-                      >
-                        Password
-                      </label>
-                      <Field
-                        className="rounded-md p-3 placeholder-gray-400"
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="*************"
-                      />
-                      <ErrorMessage
-                        name="password"
-                        component="p"
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
-                    <div className="flex items-center gap-3 mt-[20px]">
-                      <Field
-                        type="checkbox"
-                        name="agreement"
-                        id="agreement"
-                        className="mr-2"
-                      />
-                      <label htmlFor="agreement" className="font-bold">
-                        I agree to the terms and conditions
-                      </label>
-                      <ErrorMessage
-                        name="agreement"
-                        component="p"
-                        className="text-red-500 text-sm mt-1"
-                      />
-                    </div>
+              <Form className="mt-[32px] lg:mt-[30px]" autoComplete="off">
+                <div className="flex flex-col" style={{ gap: "30px" }}>
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="email"
+                      className="font-bold"
+                    >
+                      Enter Email Address
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Joepaul@gmail.com"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
                   </div>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-3 hover:bg-primary-700 mt-[40px] lg:mt-[50px]"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Spinner size="sm" />
-                        <span className="pl-3">Loading...</span>
-                      </>
-                    ) : (
-                      "Sign Up"
-                    )}
-                  </button>
-                </Form>
-              )}
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="first_name"
+                      className="font-bold"
+                    >
+                      First Name
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="text"
+                      name="first_name"
+                      id="first_name"
+                      placeholder="First Name"
+                    />
+                    <ErrorMessage
+                      name="first_name"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="last_name"
+                      className="font-bold"
+                    >
+                      Last Name
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="text"
+                      name="last_name"
+                      id="last_name"
+                      placeholder="Last Name"
+                    />
+                    <ErrorMessage
+                      name="last_name"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="password"
+                      className="font-bold"
+                    >
+                      Enter Your Password
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="**********"
+                    />
+                    <ErrorMessage
+                      name="password"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  {/* <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="password"
+                      className="font-bold"
+                    >
+                      questionnaire id
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="text"
+                      name="questionnaire_id"
+                      id="questionnaire_id"
+                      placeholder="questionnaire_id"
+                    />
+                    <ErrorMessage
+                      name="questionnaire_id"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div> */}
+                </div>
+                <button
+                  type="submit"
+                  className="rounded-2xl bg-primary-500 w-full text-white p-3  hover:bg-primary-700 mt-[40px] lg:mt-[46px]"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <>
+                      <Spinner size="sm" />
+                      <span className="pl-3">Loading...</span>
+                    </>
+                  ) : (
+                    "Sign up"
+                  )}
+                </button>
+              </Form>
             </Formik>
             <div className="mt-[20px] lg:mt-[42px]">
               <p className="mb-[16px] lg:mt-[30px]">

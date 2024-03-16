@@ -1,62 +1,41 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { Alert, Spinner } from "flowbite-react";
-import axios from "axios";
+import { Spinner } from "flowbite-react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  signInStart,
-  signInSuccess,
-  signInFailure,
-} from "../../redux/user/userSlice";
+import { useLoginMutation } from "../../slices/userApiSlice";
+import { setCredentials } from "../../slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
-
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import signInImage from "../../assets/Rectangle 39.svg";
 import internPulseLogo from "../../assets/InternPulseLogo.svg";
 
 const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, error: errorMessage } = useSelector((state) => state.user);
 
-  const initialValues = {
-    email: "",
-    password: "",
-  };
+  const [login, { isLoading }] = useLoginMutation();
+  const { userInfo } = useSelector((state) => state.auth);
 
-  const validationSchema = Yup.object({
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Required please"),
-    password: Yup.string().required("Required"),
-  });
-
-  const handleSubmit = async (values, { setSubmitting }) => {
-    try {
-      dispatch(signInStart());
-      const response = await axios.post(
-        "https://project-x-backend-lbglg.ondigitalocean.app/api/v1/login",
-        values
-      );
-
-      const data = response.data;
-      if (data.success === false) {
-        dispatch(signInFailure(data.message));
-      } else {
-        dispatch(signInSuccess(data));
-        navigate("/");
-
-        dispatch(signInFailure(null));
-      }
-    } catch (error) {
-      if (error.response) {
-        const errorMessage = error.response.data.message || "An error occurred";
-        dispatch(signInFailure(errorMessage));
-      } else {
-        dispatch(signInFailure("Network error. Please try again later."));
-      }
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
     }
-    setSubmitting(false);
+  }, [userInfo, navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await login({ email, password }).unwrap();
+      dispatch(setCredentials({ ...res }));
+      toast.success("login Successful");
+      navigate("/home");
+    } catch (err) {
+      console.log(err);
+      toast.error(err?.data?.message || "Invalid email or password");
+    }
   };
 
   return (
@@ -76,77 +55,65 @@ const SignIn = () => {
             <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold">
               Sign in to InternPulse
             </h1>
-            {errorMessage && (
-              <Alert className="mt-5" color="failure">
-                {errorMessage}
-              </Alert>
-            )}
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit}
+
+            <form
+              onSubmit={(e) => handleSubmit(e)}
+              className="mt-[32px] lg:mt-[45px]"
             >
-              {({ isSubmitting }) => (
-                <Form className="mt-[32px] lg:mt-[45px]">
-                  <div className="flex flex-col" style={{ gap: "30px" }}>
-                    <div className="flex flex-col">
-                      <label
-                        style={{ marginBottom: "14px" }}
-                        htmlFor="email"
-                        className="font-bold"
-                      >
-                        Enter Email Address
-                      </label>
-                      <Field
-                        type="email"
-                        name="email"
-                        placeholder="Joepaul@gmail.com"
-                        className="rounded-md p-3"
-                      />
-                      <ErrorMessage
-                        name="email"
-                        component="div"
-                        className="text-red-500 mt-1"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <label
-                        style={{ marginBottom: "14px" }}
-                        htmlFor="password"
-                        className="font-bold"
-                      >
-                        Enter Password
-                      </label>
-                      <Field
-                        type="password"
-                        name="password"
-                        placeholder="*************"
-                        className="rounded-md p-3"
-                      />
-                      <ErrorMessage
-                        name="password"
-                        component="div"
-                        className="text-red-500 mt-1"
-                      />
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    className="rounded-2xl bg-primary-500 w-full text-white p-3  hover:bg-primary-700 mt-[40px] lg:mt-[46px]"
-                    disabled={isSubmitting}
+              <div className="flex flex-col" style={{ gap: "30px" }}>
+                <div className="flex flex-col">
+                  <label
+                    style={{ marginBottom: "14px" }}
+                    htmlFor="email"
+                    className="font-bold"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <Spinner size="sm" />
-                        <span className="pl-3">Loading...</span>
-                      </>
-                    ) : (
-                      "Sign In"
-                    )}
-                  </button>
-                </Form>
-              )}
-            </Formik>
+                    Enter Email Address
+                  </label>
+                  <input
+                    className="rounded-md p-3"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Joepaul@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label
+                    style={{ marginBottom: "14px" }}
+                    htmlFor="password"
+                    className="font-bold"
+                  >
+                    Enter Password
+                  </label>
+                  <input
+                    className="rounded-md p-3"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="*************"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="rounded-2xl bg-primary-500 w-full text-white p-3  hover:bg-primary-700 mt-[40px] lg:mt-[46px]"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Spinner size="sm" />
+                    <span className="pl-3">Loading...</span>
+                  </>
+                ) : (
+                  "Sign In"
+                )}
+              </button>
+            </form>
+
             <div className="mt-[40px] lg:mt-[20px]">
               <p className="mb-[16px] lg:mt-[10px]">
                 <span className="font-bold">* </span>
