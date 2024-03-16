@@ -34,7 +34,10 @@ const SignIn = () => {
       navigate("/dashboard");
     } catch (err) {
       console.log(err);
-      toast.error(err?.data?.message || "an error occured. please try again");
+      toast.error(
+        err?.data?.message ||
+          "An unexpected error occurred. Please try again later."
+      );
     }
   };
 
