@@ -1,205 +1,220 @@
 import internPulseLogo from "../../assets/InternPulseLogo.svg";
 import signUpImg from "../../assets/sign-up-image.png";
-import { Link } from "react-router-dom";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { Spinner } from "flowbite-react";
+import { useSignupMutation } from "../../slices/userApiSlice";
+import { setCredentials } from "../../slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const initialValues = {
+    email: "",
+    first_name: "",
+    last_name: "",
+    password: "",
+    questionnaire_id: "",
+  };
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    first_name: Yup.string().required("First name is required"),
+    last_name: Yup.string().required("Last name is required"),
+    password: Yup.string().required("Password is required"),
+  });
+
+  const [signup, { isLoading }] = useSignupMutation();
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      toast.info("please complete your registratioin");
+      navigate("/profileform");
+    }
+  }, [navigate, userInfo]);
+
+  const handleSubmit = async (values) => {
+    const { email, first_name, last_name, password, questionnaire_id } = values;
+    try {
+      const res = await signup({
+        email,
+        first_name,
+        last_name,
+        password,
+      }).unwrap();
+      dispatch(setCredentials({ ...res }));
+      navigate("/profileform");
+    } catch (err) {
+      console.log(err);
+      if (err.status === "PARSING_ERROR") {
+        toast.error("An unexpected error occurred. Please try again later.");
+      } else if (err.status === 400 && err.data && err.data.errors) {
+        const validationErrors = Object.values(err.data.errors).flat();
+
+        validationErrors.forEach((error) => {
+          toast.error(error);
+        });
+      } else {
+        console.log(err);
+        toast.error(
+          err?.data?.message ||
+            err.error ||
+            "An error occured. please try again "
+        );
+      }
+    }
+  };
+
   return (
-    <main className="h-screen flex">
-      <div className="h-full w-1/2 hidden md:block lg:block">
-        <img className="h-full w-full object-cover" src={signUpImg} alt="" />
+    <main className="h-screen w-[100%] flex justify-center items-start gap-14">
+      <div className="h-[800px]  w-[560px] hidden md:block lg:block">
+        <img className="h-full w-full " src={signUpImg} alt="" />
       </div>
-      <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 overflow-y-scroll  bg-neutral-30 md:bg-inherit lg:bg-inherit">
-        <Link to={'/'} className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white">
+      <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 o  bg-neutral-30 md:bg-inherit lg:bg-inherit">
+        <div className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[64px] bg-white">
           <img src={internPulseLogo} alt="Intern Pulse Logo" />
-        </Link>
+        </div>
         <div className="px-6 w-full">
           <div className="w-full mx-auto lg:w-546">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+            <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold">
               Sign up to InternPulse
             </h1>
-            <form action="" className="mt-[32px] lg:mt-[52px]">
-              <div className="flex flex-col" style={{ gap: "30px" }}>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="email"
-                    className="font-bold"
-                  >
-                    Enter Email Address
-                  </label>
-                  <input
-                    className="rounded-md p-3 placeholder-gray-400"
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Joepaul@gmail.com"
-                  />
+
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <Form className="mt-[32px] lg:mt-[30px]" autoComplete="off">
+                <div className="flex flex-col" style={{ gap: "30px" }}>
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="email"
+                      className="font-bold"
+                    >
+                      Enter Email Address
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Joepaul@gmail.com"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="first_name"
+                      className="font-bold"
+                    >
+                      First Name
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="text"
+                      name="first_name"
+                      id="first_name"
+                      placeholder="First Name"
+                    />
+                    <ErrorMessage
+                      name="first_name"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="last_name"
+                      className="font-bold"
+                    >
+                      Last Name
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="text"
+                      name="last_name"
+                      id="last_name"
+                      placeholder="Last Name"
+                    />
+                    <ErrorMessage
+                      name="last_name"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="password"
+                      className="font-bold"
+                    >
+                      Enter Your Password
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder="**********"
+                    />
+                    <ErrorMessage
+                      name="password"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div>
+                  {/* <div className="flex flex-col">
+                    <label
+                      style={{ marginBottom: "14px" }}
+                      htmlFor="password"
+                      className="font-bold"
+                    >
+                      questionnaire id
+                    </label>
+                    <Field
+                      className="rounded-md p-3"
+                      type="text"
+                      name="questionnaire_id"
+                      id="questionnaire_id"
+                      placeholder="questionnaire_id"
+                    />
+                    <ErrorMessage
+                      name="questionnaire_id"
+                      component="p"
+                      className="text-red-500 text-sm mt-1"
+                    />
+                  </div> */}
                 </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="fullname"
-                    className="font-bold"
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    className="rounded-md p-3 placeholder-gray-400"
-                    type="text"
-                    id="fullname"
-                    name="fullname"
-                    placeholder="Joe Paul"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="number"
-                    className="font-bold"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    className="rounded-md p-3 placeholder-gray-400"
-                    type="number"
-                    id="number"
-                    name="number"
-                    placeholder="+2348031104192"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="country"
-                    className="font-bold"
-                  >
-                    Phone Number
-                  </label>
-                  <select
-                    name="country"
-                    id="country"
-                    className="rounded-md p-3 placeholder-gray-400"
-                  >
-                    <option value="Country" selected disabled>
-                      Country
-                    </option>
-                    <option value="Nigeria">Nigeria</option>
-                    <option value="Ghana">Ghana</option>
-                    <option value="South Africa">South Africa</option>
-                    <option value="Kenya">Kenya</option>
-                    <option value="Morocco">Morocco</option>
-                    <option value="Senegal">Senegal</option>
-                    <option value="others">others</option>
-                  </select>
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="career"
-                    className="font-bold"
-                  >
-                    Phone Number
-                  </label>
-                  <select
-                    name="career"
-                    id="career"
-                    className="rounded-md p-3 placeholder-gray-400"
-                  >
-                    <option value="Choose Career" selected disabled>
-                      Choose Career
-                    </option>
-                    <option value="Frontend Development">
-                      Frontend Development
-                    </option>
-                    <option value="Backend Development">
-                      Backend Development
-                    </option>
-                    <option value="UI/UX Design">UI/UX Design</option>
-                    <option value="Product Management">
-                      Product Management
-                    </option>
-                  </select>
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="linkedIn"
-                    className="font-bold"
-                  >
-                    LinkedIn URL
-                  </label>
-                  <input
-                    className="rounded-md p-3 placeholder-gray-400"
-                    type="text"
-                    id="linkedIn"
-                    name="linkedIn"
-                    placeholder="www.linkedin.com/JoePaul"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="portfolioURL"
-                    className="font-bold"
-                  >
-                    Github/Notion/Behance URL
-                  </label>
-                  <input
-                    className="rounded-md p-3 placeholder-gray-400"
-                    type="text"
-                    id="portfolioURL"
-                    name="portfolioURL"
-                    placeholder="Portfolio URL"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="X-URL"
-                    className="font-bold"
-                  >
-                    X URL
-                  </label>
-                  <input
-                    className="rounded-md p-3 placeholder-gray-400"
-                    type="text"
-                    id="URL"
-                    name="URL"
-                    placeholder="www.x.com/JoePaul"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label
-                    style={{ marginBottom: "14px" }}
-                    htmlFor="occupation"
-                    className="font-bold"
-                  >
-                    Occupation
-                  </label>
-                  <input
-                    className="rounded-md p-3 placeholder-gray-400"
-                    type="text"
-                    id="occupation"
-                    name="occupation"
-                    placeholder="Student"
-                  />
-                </div>
-              </div>
-              <div className="mt-[40px] lg:mt-[25px]">
-                <p>
-                  Would you Kindly consent to allowing us to store your
-                  information? Rest assured, your information will not be sold
-                  or misused.
-                </p>
-                <span className="flex items-center gap-3 mt-[20px]">
-                  <input type="checkbox" name="" id="" />
-                  <p className="font-bold">I agree</p>
-                </span>
-                <button className="rounded-2xl bg-primary-500 w-full text-white p-3 md:p-4 lg:p-4 hover:bg-primary-700 mt-[40px] lg:mt-[50px]">
-                  Sign Up
+                <button
+                  type="submit"
+                  className="rounded-2xl bg-primary-500 w-full text-white p-3  hover:bg-primary-700 mt-[40px] lg:mt-[46px]"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <>
+                      <Spinner size="sm" />
+                      <span className="pl-3">Loading...</span>
+                    </>
+                  ) : (
+                    "Sign up"
+                  )}
                 </button>
-              </div>
-            </form>
+              </Form>
+            </Formik>
             <div className="mt-[20px] lg:mt-[42px]">
               <p className="mb-[16px] lg:mt-[30px]">
                 <span className="font-bold">* </span>
