@@ -49,7 +49,6 @@ const SignUp = () => {
         password,
       }).unwrap();
       dispatch(setCredentials({ ...res }));
-      toast.info("please complete your registratioin");
       navigate("/profileform");
     } catch (err) {
       console.log(err);

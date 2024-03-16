@@ -1,6 +1,6 @@
 import React from "react";
 import App from "./App.jsx";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { SnackbarProvider } from "notistack";
 import "./index.css";
