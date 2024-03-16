@@ -21,7 +21,8 @@ const SignIn = () => {
 
   useEffect(() => {
     if (userInfo) {
-      navigate("/");
+      navigate("/dashboard");
+      toast.info("You are already logged in");
     }
   }, [userInfo, navigate]);
 
@@ -31,7 +32,7 @@ const SignIn = () => {
       const res = await login({ email, password }).unwrap();
       dispatch(setCredentials({ ...res }));
       toast.success("login Successful");
-      navigate("/home");
+      navigate("/dashboard");
     } catch (err) {
       console.log(err);
       toast.error(err?.data?.message || "Invalid email or password");
@@ -45,7 +46,6 @@ const SignIn = () => {
       </div>
 
       <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2   bg-neutral-30 md:bg-inherit lg:bg-inherit">
-
         <Link
           to={"/"}
           className="py-3 px-6 lg:py-5 w-full flex items-center lg:justify-center mb-[45px] lg:mb-[70px] bg-white"
