@@ -44,7 +44,6 @@ const SignIn = () => {
       <div className="h-[700px] w-[500px] hidden md:block lg:block">
         <img className="h-full w-full object-cover" src={signInImage} alt="" />
       </div>
-
       <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2   bg-neutral-30 md:bg-inherit lg:bg-inherit">
         <Link
           to={"/"}
@@ -131,9 +130,7 @@ const SignIn = () => {
                 <span className="text-neutral-700 font-normal">
                   Forgot Password?
                 </span>
-                <Link to={"/forgot-password"} className="font-semibold ml-1">
-                  Reset Password
-                </Link>
+                <span className="font-semibold"> Reset Password</span>
               </p>
             </div>
           </div>

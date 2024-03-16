@@ -49,13 +49,15 @@ const SignUp = () => {
         password,
       }).unwrap();
       dispatch(setCredentials({ ...res }));
-      navigate("/home");
+      toast.info("please complete your registratioin");
+      navigate("/profileform");
     } catch (err) {
       console.log(err);
       if (err.status === "PARSING_ERROR") {
         toast.error("An unexpected error occurred. Please try again later.");
       } else if (err.status === 400 && err.data && err.data.errors) {
         const validationErrors = Object.values(err.data.errors).flat();
+
         validationErrors.forEach((error) => {
           toast.error(error);
         });
