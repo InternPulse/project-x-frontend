@@ -5,34 +5,39 @@ import notification from "../../../../assets/icons/notify.png";
 import tasks from "../../../../assets/icons/tasks-icon.svg";
 import stage from "../../../../assets/icons/stage-icon.svg";
 import peers from "../../../../assets/icons/peers-icon.svg";
+import MobileNavbar from "../../components/mobilenav";
 
 const DashboardHome = () => {
   return (
     <div>
+      <MobileNavbar />
       <div className="flex justify-between items-center mt-[12px]">
-        {" "}
-        <h1 className=" ml-[84px] text-4xl">Dashboard</h1>
-        <div className="flex justify-between mr-[84px]">
+        <h1 className=" lg:ml-[84px] ml-[40px] lg:text-4xl text-2xl">
+          Dashboard
+        </h1>
+        <div className=" flex justify-between mr-[84px] ">
           <img
             src={message}
             alt="Message"
-            className=" object-contain w-[20%]"
+            className=" object-contain w-[20%] hidden lg:block"
           />
           <img
             src={notification}
             alt="Notification"
-            className=" object-contain w-[20%]"
+            className=" object-contain w-[20%] hidden lg:block"
           />
         </div>
       </div>
 
-      <img src={Line} />
+      <img src={Line} className=" hidden lg:block" />
 
       {/* Body */}
-      <div className=" ml-[84px] w-[55%] mt-[18px]">
-        <div className="bg-[#2967BC] pl-[67px] pr-[150px] pt-[25px] pb-[42px] text-white rounded-[25px]">
-          <p className=" text-2xl pb-[10px]">Welcome Back Daniel!</p>
-          <p className=" text-1xl">Role: Product Manager</p>
+      <div className=" lg:ml-[84px] lg:w-[55%] w-[80%] mt-[18px] mx-[auto]">
+        <div className="bg-[#2967BC] lg:pl-[67px] pl-[9px] py-[14px] lg:pr-[150px] lg:pt-[25px] lg:pb-[42px] text-white lg:rounded-[25px] rounded-[5px]">
+          <p className=" lg:text-2xl text-[16px] pb-[10px]">
+            Welcome Back Daniel!
+          </p>
+          <p className=" lg:text-1xl text-[12px]">Role: Product Manager</p>
         </div>
         <div className=" mt-[18px] flex gap-[13px]">
           <div className=" border border-solid border-gray-300 w-[110px] h-[110px] rounded-[7px] flex flex-col justify-between items-center py-[7px] ">
