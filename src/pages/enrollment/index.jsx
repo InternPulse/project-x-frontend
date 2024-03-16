@@ -13,7 +13,7 @@ const EnrollmentScreen = () => {
               <span className=" text-primary-500"> InternPulse.</span>
             </h1>
             <h3 className=" pt-[32px]">
-              Kindly fill out this little Survey to proceed{" "}
+              Kindly fill out this little Survey to proceed
             </h3>
             <div className=" pt-[32px]">
               <ol>
