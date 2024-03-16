@@ -52,7 +52,6 @@ const EnrollmentScreen = () => {
                       <input
                         type="text"
                         placeholder="Answer"
-                        value={""}
                         className=" lg:w-[570px] md:w-[528px] lg:h-[158px] md:h-[88px]   rounded-[5px] border-[1px]  border-solid border-[#63696E]"
                       />
                     </div>
@@ -66,7 +65,6 @@ const EnrollmentScreen = () => {
                       <input
                         type="text"
                         placeholder="Answer"
-                        value={""}
                         className=" lg:w-[570px] md:w-[528px] lg:h-[158px] md:h-[88px]   rounded-[5px] border-[1px]  border-solid border-[#63696E]"
                       />
                     </div>
