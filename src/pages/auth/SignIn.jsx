@@ -22,7 +22,6 @@ const SignIn = () => {
   useEffect(() => {
     if (userInfo) {
       navigate("/dashboard");
-      toast.info("You are already logged in");
     }
   }, [userInfo, navigate]);
 
