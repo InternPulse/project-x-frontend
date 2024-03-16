@@ -34,7 +34,7 @@ const SignIn = () => {
       navigate("/dashboard");
     } catch (err) {
       console.log(err);
-      toast.error(err?.data?.message || "Invalid email or password");
+      toast.error(err?.data?.message || "an error occured. please try again");
     }
   };
 
