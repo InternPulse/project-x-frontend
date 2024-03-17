@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import internPulseLogo from "../../../assets/Rectangle 58.png";
 import data from "../data/data";
 import Slack from "../../../assets/icons/slack.svg";
 import ProfileImage from "../../../assets/icons/profile-image.png";
-import MobileNavbar from "./mobilenav";
+// import MobileNavbar from "./mobilenav";
 
 export default function Sidebar() {
   const location = useLocation();
@@ -27,8 +27,8 @@ export default function Sidebar() {
                 className={`flex justify-center items-center cursor-pointer align-middle ${
                   location.pathname === nav.url
                     ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px]"
-                    : "px-[5px] py-[3px]"
-                } w-[28px] h-[28px]`}
+                    : "px-[5px] py-[3px] bg-white rounded-[3px]"
+                } w-[32px] h-[32px]`}
               >
                 <Link to={nav.url}>
                   <img
@@ -46,8 +46,8 @@ export default function Sidebar() {
               className={`flex absolute bottom-[100px] items-center justify-center cursor-pointer font-Montserrat font-[400] ${
                 location.pathname === "/dashboard/slack"
                   ? "bg-[#193D71] rounded-[3px] px-[5px] py-[3px]"
-                  : "px-[5px] py-[3px]"
-              } w-[28px] h-[28px]`}
+                  : "px-[5px] py-[3px] bg-white rounded-[3px]"
+              } w-[32px] h-[32px]`}
             >
               <Link to="/dashboard/slack">
                 <img
