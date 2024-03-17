@@ -19,11 +19,11 @@ const SignIn = () => {
   const [login, { isLoading }] = useLoginMutation();
   const { userInfo } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (userInfo) {
-      navigate("/dashboard");
-    }
-  }, [userInfo, navigate]);
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     navigate("/dashboard");
+  //   }
+  // }, [userInfo, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,6 +80,7 @@ const SignIn = () => {
                     placeholder="Joepaul@gmail.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    disabled={isLoading}
                   />
                 </div>
                 <div className="flex flex-col">
@@ -98,6 +99,7 @@ const SignIn = () => {
                     placeholder="*************"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    disabled={isLoading}
                   />
                 </div>
               </div>

@@ -8,11 +8,21 @@ import { setCredentials } from "../../slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { setAccessToken } from "../../slices/authSlice";
 import { useEffect } from "react";
 
 const SignUp = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  // Assuming `response` contains the signup response object
+  const handleSignUpResponse = (response) => {
+    const { access, ...userInfo } = response.data;
+
+    // Dispatch actions to store the access token and user credentials in the Redux store
+    dispatch(setAccessToken(access));
+    dispatch(setCredentials(userInfo));
+  };
 
   const initialValues = {
     email: "",
@@ -32,13 +42,6 @@ const SignUp = () => {
   const [signup, { isLoading }] = useSignupMutation();
   const { userInfo } = useSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (userInfo) {
-      toast.info("please complete your registratioin");
-      navigate("/profileform");
-    }
-  }, [navigate, userInfo]);
-
   const handleSubmit = async (values) => {
     const { email, first_name, last_name, password, questionnaire_id } = values;
     try {
@@ -49,6 +52,7 @@ const SignUp = () => {
         password,
       }).unwrap();
       dispatch(setCredentials({ ...res }));
+      toast.success("Signup successful");
       navigate("/profileform");
     } catch (err) {
       console.log(err);
@@ -72,8 +76,8 @@ const SignUp = () => {
   };
 
   return (
-    <main className="h-screen w-[100%] flex justify-center items-start gap-14">
-      <div className="h-[800px]  w-[560px] hidden md:block lg:block">
+    <main className="h-screen  flex  gap-14">
+      <div className="h-[800px]   w-[550px]  hidden md:block lg:block">
         <img className="h-full w-full " src={signUpImg} alt="" />
       </div>
       <div className="flex flex-col items-center h-full w-full md:w-1/2 lg:w-1/2 o  bg-neutral-30 md:bg-inherit lg:bg-inherit">
@@ -107,6 +111,7 @@ const SignUp = () => {
                       name="email"
                       id="email"
                       placeholder="Joepaul@gmail.com"
+                      disabled={isLoading}
                     />
                     <ErrorMessage
                       name="email"
@@ -128,6 +133,7 @@ const SignUp = () => {
                       name="first_name"
                       id="first_name"
                       placeholder="First Name"
+                      disabled={isLoading}
                     />
                     <ErrorMessage
                       name="first_name"
@@ -149,6 +155,7 @@ const SignUp = () => {
                       name="last_name"
                       id="last_name"
                       placeholder="Last Name"
+                      disabled={isLoading}
                     />
                     <ErrorMessage
                       name="last_name"
@@ -170,6 +177,7 @@ const SignUp = () => {
                       name="password"
                       id="password"
                       placeholder="**********"
+                      disabled={isLoading}
                     />
                     <ErrorMessage
                       name="password"
