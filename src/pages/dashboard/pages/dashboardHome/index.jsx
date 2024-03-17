@@ -11,7 +11,7 @@ const DashboardHome = () => {
   return (
     <div>
       <MobileNavbar />
-      <div className="flex justify-between items-center mt-[12px]">
+      <div className="flex justify-between items-center mt-[82px] lg:mt-[12px]">
         <h1 className="lg:ml-[84px] ml-[40px] lg:text-4xl text-2xl">
           Dashboard
         </h1>

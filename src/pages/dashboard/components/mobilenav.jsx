@@ -13,8 +13,8 @@ const MobileNavbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <nav className="lg:hidden bg-white text-white p-4 fixed top-0 left-0 w-full z-50">
-      <div className="flex justify-between items-center">
+    <nav className="lg:hidden bg-white text-white p-4 fixed top-0 left-0 w-full z-50 border-b border-b-bottom-[20px] shadow-md mb-[40px] ">
+      <div className="flex justify-between items-center   w-[100%]">
         <Link to="/" className=" w-[30%]">
           <img src={InterpulseMobileNav} className=" object-contain" />
         </Link>

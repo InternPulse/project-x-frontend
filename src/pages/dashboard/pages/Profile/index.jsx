@@ -11,9 +11,9 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className=" mx-[20px] lg:mx-0">
       <MobileNavbar />
-      <div className="flex justify-between items-center mt-[12px]">
+      <div className="flex justify-between items-center mt-[82px] lg:mt-[12px] ">
         <h1 className=" lg:ml-[84px] text-4xl">My Profile</h1>
       </div>
 
@@ -41,8 +41,8 @@ const Profile = () => {
                   src={URL.createObjectURL(selectedImage)}
                   alt="profileImage"
                   style={{
-                    width: "150px",
-                    height: "150px",
+                    width: "120px",
+                    height: "120px",
                     objectFit: "cover",
                     borderRadius: "100px",
                   }}
@@ -67,7 +67,7 @@ const Profile = () => {
             <p className=" my-[auto] font-bold text-2xl">Photo</p>
             <label
               htmlFor="imageInput"
-              className="block mt-2 cursor-pointer border border-solid  border-gray-300 w-[10%] pl-[10px] rounded-[5px]"
+              className="block mt-2 cursor-pointer border border-solid  border-gray-300  p-[5px] rounded-[5px]"
             >
               Choose File
             </label>
