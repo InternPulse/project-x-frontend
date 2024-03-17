@@ -1,6 +1,5 @@
 import man from "../../assets/enrollmentImage.png";
 import Header from "../../components/header/Header";
-import { Link } from "react-router-dom";
 
 const EnrollmentScreen = () => {
   return (
@@ -84,9 +83,6 @@ const EnrollmentScreen = () => {
           </button>
           <button className="bg-neutral-200 hover:bg-neutral-100 border border-solid border-primary-500 text-neutral-700 py-2 px-4 rounded-xl">
             Learn More
-          </button>
-          <button className="bg-neutral-200 hover:bg-neutral-100 border border-solid border-primary-500 text-neutral-700 py-2 px-4 rounded-xl">
-            <Link to="/dashboard">Dashboard Test</Link>
           </button>
         </div>
       </div>
