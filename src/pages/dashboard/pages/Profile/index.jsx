@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import profile from "../../../../assets/icons/profile-image.png";
+import MobileNavbar from "../../components/mobilenav";
 
-const Profile = () => {
+const Profile = ({ profileImage }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -11,12 +12,22 @@ const Profile = () => {
 
   return (
     <div>
+      <MobileNavbar />
       <div className="flex justify-between items-center mt-[12px]">
-        <h1 className="ml-[84px] text-4xl">My Profile</h1>
+        <h1 className=" lg:ml-[84px] text-4xl">My Profile</h1>
       </div>
+
+      <hr
+        className="hidden lg:block"
+        style={{
+          width: "100%",
+          marginTop: "8px",
+          marginBottom: "8px",
+        }}
+      />
       {/*  body*/}
 
-      <div className="ml-[84px]">
+      <div className="lg:ml-[84px]">
         <div className="mb-[50px] mt-[40px]">
           <p className="  text-3xl font-bold">Daniel Harry</p>
           <p>Role: Project Manager</p>
@@ -26,7 +37,16 @@ const Profile = () => {
           <div>
             <label htmlFor="imageInput">
               {selectedImage ? (
-                <img src={URL.createObjectURL(selectedImage)} alt="Selected" />
+                <img
+                  src={URL.createObjectURL(selectedImage)}
+                  alt="profileImage"
+                  style={{
+                    width: "150px",
+                    height: "150px",
+                    objectFit: "cover",
+                    borderRadius: "100px",
+                  }}
+                />
               ) : (
                 <img
                   src={profile}
