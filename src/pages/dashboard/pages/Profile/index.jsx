@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import profile from "../../../../assets/icons/profile-image.png";
 import MobileNavbar from "../../components/mobilenav";
 
-const Profile = ({ profileImage }) => {
+const Profile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (e) => {
