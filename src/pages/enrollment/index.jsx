@@ -84,7 +84,7 @@ const EnrollmentScreen = () => {
               <span className=" text-primary-500"> InternPulse.</span>
             </h1>
             <h3 className=" pt-[32px]">
-              Kindly fill out this little Survey to proceed{" "}
+              Kindly fill out this little Survey to proceed
             </h3>
             <form onSubmit={handleSubmit}>
               <div className=" pt-[32px]">
@@ -139,6 +139,7 @@ const EnrollmentScreen = () => {
                         />
                       </div>
                     </div>
+
                   </li>
                   <li className=" pt-[40px]">
                     4. On a scale of 1-10, why is gaining evidence of
@@ -178,6 +179,7 @@ const EnrollmentScreen = () => {
                 </button>
               </div>
             </form>
+
           </div>
           <div className="  lg:w-[50%] hidden lg:block ">
             <img src={man} alt="Enrollment Man" />
